@@ -121,7 +121,8 @@ ul li:hover {
   left: 0;
   height: calc(100vh - 50px);
   width: 100%;
-  background-color: black;
+  height: auto;
+  background-color: #09c372;
 }
 
 .mobile-menu li {
@@ -132,11 +133,14 @@ ul li:hover {
   header nav {
     display: none;
   }
-
   #hamburger-icon {
     display: block;
   }
-  body {
-    margin-top: 30px;
-  }
 }
+
+:root {
+--brand-color: #84CC16;
+--dark-color: #27272A;
+--mid-color: #52525B;
+--light-color: #F5F5F5;
+  }
