@@ -8,9 +8,6 @@
         <?php include 'navbar.html'?>
     </head>
     <body>
-    <div style="background-color:#e5e5e5;padding:15px;text-align:center;">
-        <h1>Hello World</h1>
-    </div>
 
     <div style="overflow:auto">
         <div class="menu">
