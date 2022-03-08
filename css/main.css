@@ -34,6 +34,7 @@ body {
   float: left;
   width: 17%;
   text-align: center;
+  margin-left: 1%;
 }
 
 .menu a {
@@ -63,9 +64,9 @@ body {
 }
 
 .footer {
-  position: fixed;
+  position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 100%;
   width: 100%;
   background-color: #27272A;
   color: white;
