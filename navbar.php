@@ -15,7 +15,7 @@
           <li><a href="/products">Top Seris</a></li>
           <li><a href="/about">Sobre nos</a></li>
           <li id="login"><a href="login_register/login.php" >Login</a></li>
-          <li id="signup"><a href="login_register/register.php">Registar</a></li>
+          <li id="signup"><a href="register.php">Registar</a></li>
         </ul>
       </nav>
       <div id="hamburger-icon" onclick="toggleMobileMenu(this)">

@@ -55,12 +55,9 @@ if(isset($_POST['submit'])) {
 .0/css/font-awesome.min.css">
 
     <link rel="stylesheet" type="text/css" href="../css/login_register.css">
-
-    <title>Cactus Soup</title>
 </head>
 <body>
     <div class="container">
-        
         <form action="" method="POST" class="login-email">
             <p class="login-text">Register</p>
             <div class="input-group">
