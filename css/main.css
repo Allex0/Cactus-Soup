@@ -1,6 +1,13 @@
+:root {
+  --brand-color: #84CC16;
+  --dark-color: #27272A;
+  --mid-color: #52525B;
+  --light-color: #F5F5F5;
+    }
+
 body {
   margin: 0;
-  background-color: #19c919;
+  background-color: #F5F5F5;
 }
   
 /* Style the header */
