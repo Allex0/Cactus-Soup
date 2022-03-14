@@ -1,9 +1,43 @@
 <?php
-include 'config.php';
+include 'login_register/config.php';
 
 error_reporting(0);
 
 session_start();
+
+//Check the session start time is set or not
+
+if(!isset($_SESSION['start']))
+
+{
+
+    //Set the session start time
+
+    $_SESSION['start'] = time();
+
+}
+
+
+//Check the session is expired or not
+
+if (isset($_SESSION['username']) && (time() - $_SESSION['start'] > 5)) {
+
+    //Unset the session variables
+
+    session_unset();
+
+    //Destroy the session
+
+    session_destroy();
+
+    echo "<script> alert('Session expired.');</script>";
+
+}
+
+else 
+{
+
+}
 
 ?>
 
@@ -24,8 +58,28 @@ session_start();
           <li><a href="/home">Top Filmes</a></li>
           <li><a href="/products">Top Seris</a></li>
           <li><a href="/about">Sobre nos</a></li>
-          <li id="login"> <?php echo "<a href="login_register/login.php" >Login</a>" ?></li>
-          <li id="signup"><a href="login_register/register.php">Registar</a></li>
+           
+            <?php 
+              if (isset($_SESSION['username'])) 
+              {
+                echo '<li> <a href="#">Perfil</a></li>';
+              }
+              else
+              {
+                echo'<li id="login"> <a href="login_register/login.php" >Login</a> </li>';
+              }
+            ?>
+
+            <?php 
+              if (isset($_SESSION['username'])) 
+              {
+                
+              }
+              else
+              {
+                echo'<li id="signup"> <a href="login_register/login.php" >Registar</a> </li>';
+              }
+            ?>
         </ul>
       </nav>
       <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
@@ -36,8 +90,28 @@ session_start();
           <li><a href="/home">Top Filmes</a></li>
           <li><a href="/products">Top Seris</a></li>
           <li><a href="/about">Sobre Nos</a></li>
-          <li id="login"><a href="login_register/login.php" >Login</a></li>
-          <li id="signup"><a href="/signup">Registar</a></li>
+
+          <?php 
+              if (isset($_SESSION['username'])) 
+              {
+                echo '<li> <a href="#">Perfil</a></li>';
+              }
+              else
+              {
+                echo'<li id="login"> <a href="login_register/login.php" >Login</a> </li>';
+              }
+            ?>
+
+          <?php 
+              if (isset($_SESSION['username'])) 
+              {
+                
+              }
+              else
+              {
+                echo'<li id="signup"> <a href="login_register/login.php" >Registar</a> </li>';
+              }
+            ?>
         </ul>
       </div>
     </header>
