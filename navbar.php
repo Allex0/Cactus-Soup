@@ -1,3 +1,13 @@
+<?php
+include 'config.php';
+
+error_reporting(0);
+
+session_start();
+
+?>
+
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,7 +24,7 @@
           <li><a href="/home">Top Filmes</a></li>
           <li><a href="/products">Top Seris</a></li>
           <li><a href="/about">Sobre nos</a></li>
-          <li id="login"><a href="login_register/login.php" >Login</a></li>
+          <li id="login"> <?php echo "<a href="login_register/login.php" >Login</a>" ?></li>
           <li id="signup"><a href="login_register/register.php">Registar</a></li>
         </ul>
       </nav>
