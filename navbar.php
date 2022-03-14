@@ -5,22 +5,20 @@ error_reporting(0);
 
 session_start();
 
-//Check the session start time is set or not
+//Set the session duration for 5 seconds
 
-if(!isset($_SESSION['start']))
+$duration = 600;
 
-{
+//Read the request time of the user
 
-    //Set the session start time
-
-    $_SESSION['start'] = time();
-
-}
+$time = $_SERVER['REQUEST_TIME'];
 
 
-//Check the session is expired or not
+//Check the user's session exist or not
 
-if (isset($_SESSION['username']) && (time() - $_SESSION['start'] > 5)) {
+if (isset($_SESSION['LAST_ACTIVITY']) &&
+
+   ($time - $_SESSION['LAST_ACTIVITY']) > $duration) {
 
     //Unset the session variables
 
@@ -30,14 +28,22 @@ if (isset($_SESSION['username']) && (time() - $_SESSION['start'] > 5)) {
 
     session_destroy();
 
-    echo "<script> alert('Session expired.');</script>";
+    //Start another new session
+
+    session_start();
+
+    //echo "<script> alert('Session is created');</script>";
 
 }
 
-else 
-{
-
+else
+{    
+  // echo "Current session exists.<br/>";  
 }
+
+//Set the time of the user's last activity
+
+$_SESSION['LAST_ACTIVITY'] = $time;
 
 ?>
 
