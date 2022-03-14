@@ -17,23 +17,24 @@ if(isset($_POST['submit'])) {
             
             $sql = "INSERT INTO users (username, email, password) 
                 VALUES ('$username', '$email', '$password')";
-        $result = mysqli_query($conn, $sql);
+            $result = mysqli_query($conn, $sql);
 
-        if($result)
-        {
-            echo "<script>alert('User registration completed')</script>";
-            $username = "";
-            $email = "";
-            $password = "";
-            $_POST['password'] = "";
-            $_POST['cpassword'] = "";
-            //header("Location: login.php");
-        }
-        else 
-        {
-            echo "<script>alert('Ops, something went wrong')</script>";
-        }
-        }
+            if($result)
+            {
+                $username = "";
+                $email = "";
+                $password = "";
+                $_POST['password'] = "";
+                $_POST['cpassword'] = "";
+                
+                 echo '<script type="text/javascript">alert("register completed");
+                    location="login.php";</script>';
+            }
+            else 
+            {
+                echo "<script>alert('Ops, something went wrong')</script>";
+            }
+            }
         else
         {
             echo "<script>alert('email Already exists')</script>";

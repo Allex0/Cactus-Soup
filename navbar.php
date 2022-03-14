@@ -3,10 +3,6 @@ include 'login_register/config.php';
 
 error_reporting(0);
 
-if (!isset($_SESSION)){
-  echo "...";
-}
-
 session_start();
 
 //Set the session duration for 5 seconds
