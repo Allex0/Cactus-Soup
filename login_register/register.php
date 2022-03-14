@@ -27,6 +27,7 @@ if(isset($_POST['submit'])) {
             $password = "";
             $_POST['password'] = "";
             $_POST['cpassword'] = "";
+            //header("Location: login.php");
         }
         else 
         {

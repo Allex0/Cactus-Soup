@@ -3,6 +3,10 @@ include 'login_register/config.php';
 
 error_reporting(0);
 
+if (!isset($_SESSION)){
+  echo "...";
+}
+
 session_start();
 
 //Set the session duration for 5 seconds
@@ -83,7 +87,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
               }
               else
               {
-                echo'<li id="signup"> <a href="login_register/login.php" >Registar</a> </li>';
+                echo'<li id="signup"> <a href="login_register/register.php" >Registar</a> </li>';
               }
             ?>
         </ul>
