@@ -7,7 +7,7 @@ session_start();
 
 //Set the session duration for 5 seconds
 
-$duration = 1;
+$duration = 60;
 
 //Read the request time of the user
 
