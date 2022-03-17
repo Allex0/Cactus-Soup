@@ -23,9 +23,11 @@
 
         <div class="right">
             <h2>About</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elitaaa.</p>
         </div>
     </div>
-    <?php include 'footer.html'?>
+    <footer>
+    <?php include 'footer.php'?>
+    </footer>
     </body>
 </html>

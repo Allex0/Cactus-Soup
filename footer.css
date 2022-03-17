@@ -1,0 +1,30 @@
+footer{
+    position: absolute;
+    bottom: 100%;
+}
+
+.row {
+    padding: 2em 1em;
+
+}
+.row.primary {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    align-items: stretch;
+  }
+.copyright {
+    padding: 0.3em 1em;
+    background-color: #25262e;
+}
+.copyright p {
+    font-size: 0.9em;
+    text-align: center;
+}
+@media screen and (max-width: 850px) {
+    .row.primary {
+        grid-template-columns: 1fr;
+    }
+    .row.secondary {
+        flex-direction: column;
+    }
+}
