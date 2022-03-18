@@ -26,8 +26,6 @@
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elitaaa.</p>
         </div>
     </div>
-    <footer>
     <?php include 'footer.php'?>
-    </footer>
     </body>
 </html>
