@@ -7,7 +7,7 @@ session_start();
 
 //Set the session duration for 5 seconds
 
-$duration = 60;
+$duration = 600;
 
 //Read the request time of the user
 
@@ -54,7 +54,6 @@ $_SESSION['LAST_ACTIVITY'] = $time;
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/navbar.css" />
-    <title>Navigation bar</title>
   </head>
   <body>
     <header>
