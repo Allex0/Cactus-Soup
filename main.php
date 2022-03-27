@@ -17,8 +17,11 @@
         </div>
 
         <div class="main">
-            <h2>Lorum Ipsum</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            <h2>Novos filmes e seris:</h2>
+            <div class="slider"><img class="slider-item" src="batman.jpg"> 
+                <p class="slider-item-text">Batman</p>
+
+            </div>
         </div>
 
         <div class="right">

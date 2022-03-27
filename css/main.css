@@ -52,4 +52,22 @@ body {
   color: white;
   text-align: center;
 }
-    
+
+.slider {
+  height: 295px;
+  width: 870px;
+}
+
+.slider-item {
+  margin-left: 10px;
+  height: 148px;
+  width: 100px;
+  
+}
+
+.slider-item-text {
+  height: 79px;
+  width: 100px;
+  margin-left: 10px;
+  font-size: 13px;
+}

@@ -15,10 +15,10 @@
     <div class="footer-basic">
         <footer>
             <ul class="list-inline">
-                <li class="list-inline-item"><a href="#">Home</a></li>
-                <li class="list-inline-item"><a href="#">Services</a></li>
-                <li class="list-inline-item"><a href="#">About</a></li>
-                <li class="list-inline-item"><a href="#">Privacy Notice</a></li>
+                <li class="list-inline-item"><a href="#">Pagina principal</a></li>
+                <li class="list-inline-item"><a href="#">Perfil</a></li>
+                <li class="list-inline-item"><a href="#">Sobre nos</a></li>
+                <li class="list-inline-item"><a href="#">Privacidade</a></li>
             </ul>
             <div class="copyright">
             <p class="">Cactus Soup © Alexandru Arseni 2022</p>
