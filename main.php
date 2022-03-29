@@ -11,17 +11,19 @@
     <div style="overflow:auto">
         <div class="menu">
             <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-            <a href="#">Link 4</a>
+            
         </div>
 
         <div class="main">
             <h2>Novos filmes e seris:</h2>
-            <div class="slider"><img class="slider-item" src="batman.jpg"> 
+            <div class="slider">
+                <img class="slider-item" src="batman.jpg"> 
                 <p class="slider-item-text">Batman</p>
 
+                <img class="slider-item" src="batman.jpg"> 
+                <p class="slider-item-text">Batman</p>
             </div>
+            
         </div>
 
         <div class="right">
