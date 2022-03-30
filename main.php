@@ -8,28 +8,41 @@
         <?php include 'navbar.php'?>
     </head>
     <body>
+        <!-- 
     <div style="overflow:auto">
         <div class="menu">
             <a href="#">Link 1</a>
             
-        </div>
+        </div> -->
 
-        <div class="main">
-            <h2>Novos filmes e seris:</h2>
+        <div class="main center">
+            <!-- <h2>Novos filmes e seris:</h2>
             <div class="slider">
                 <img class="slider-item" src="batman.jpg"> 
                 <p class="slider-item-text">Batman</p>
 
                 <img class="slider-item" src="batman.jpg"> 
                 <p class="slider-item-text">Batman</p>
+            </div>-->
+            <div class="main-text-principal"> 
+                <h1>Plataforma de filmes e series</h1>
             </div>
-            
-        </div>
 
-        <div class="right">
+            <div class="main-text-secundario">
+                <p>Acompanhe, compartilhe e descubra seus filmes e séries favoritos com o Cactus Soup.</p>
+            </div>
+                <div class="main-objects">
+                    <div class="main-objects-images">
+                    <img src="track.png" height="50" width="50">
+                    </div>
+                <div class="main-objects-text"> track</div>
+                </div>
+            </div> 
+
+        <!-- <div class="right">
             <h2>About</h2>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elitaaa.</p>
-        </div>
+        </div> -->
     </div>
     <?php include 'footer.php'?>
     </body>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
   --brand-color: #84CC16;
   --dark-color: #27272A;
@@ -26,11 +28,48 @@ body {
   color: black;
 }
 
+.center {
+  margin: auto;
+  padding: 10px;
+}
+
 .main {
-  float: left;
+  margin-top: 20px;
   width: 60%;
+  height: 250px;
   padding: 0 20px;
   color: black;
+  background-color: #52525B;
+  border-radius: 25px;
+  
+}
+
+.main-text-principal{
+  margin-top: 10px;
+  color: #F5F5F5;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.main-text-secundario{
+  color: #F5F5F5;
+  font-size: 15px;
+  text-align: center;
+}
+.main-objects{
+  display: flex;
+}
+.main-objects-image{
+  height: 93px;
+  width: 120px;
+  display: flex;
+}
+
+.main-objects-text{
+  height: 93px;
+  width: 380px;
+  text-align: center;
+  display: flex;
 }
 
 .right {
@@ -41,16 +80,6 @@ body {
   margin-top: 7px;
   text-align: center;
   color: black;
-}
-
-.footer {
-  position: absolute;
-  left: 0;
-  bottom: 100%;
-  width: 100%;
-  background-color: #27272A;
-  color: white;
-  text-align: center;
 }
 
 .slider {
