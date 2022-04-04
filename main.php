@@ -33,9 +33,14 @@
             </div>
                 <div class="main-objects">
                     <div class="main-objects-images">
-                    <img src="track.png" height="50" width="50">
+                        <img src="track.png" height="50" width="50">
                     </div>
-                <div class="main-objects-text"> track</div>
+                    <div class="main-objects-text">
+                        trackaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                    </div>
+                    <div class="main-objects-images">
+                        <img src="track.png" height="50" width="50">
+                    </div>
                 </div>
             </div> 
 
