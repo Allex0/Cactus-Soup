@@ -30,13 +30,22 @@
 
             <div class="main-text-secundario">
                 <p>Acompanhe, compartilhe e descubra seus filmes e séries favoritos com o Cactus Soup.</p>
+                <br>
             </div>
                 <div class="main-objects">
                     <div class="main-objects-images">
-                        <img src="track.png" height="50" width="50">
+                        <img src="track.png" height="80" width="80">
                     </div>
                     <div class="main-objects-text">
-                        trackaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        <div class="main-text-caixa-principal">
+                            <p>Descobre</p>
+                            <div class="main-text-caixa-secundario">
+                                <p>Quer encontrar un bom <br>filme para ver esta tarde? <br>
+                                Procura no nosso site!
+                            </p>
+                            </div>
+                        </div>
+                        
                     </div>
                     <div class="main-objects-images">
                         <img src="track.png" height="50" width="50">

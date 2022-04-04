@@ -67,7 +67,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
             <?php 
               if (isset($_SESSION['username'])) 
               {
-                echo '<li> <a href="#">Perfil</a></li>';
+                echo '<li> <a href="#"> ' + $_SESSION['username'] + ' </a></li>';
               }
               else
               {
