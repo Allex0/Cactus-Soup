@@ -1,5 +1,4 @@
 <?php 
-
 include 'config.php';
 
 session_start();
@@ -38,7 +37,6 @@ if (isset($_POST['submit'])) {
 
 	<link rel="stylesheet" type="text/css" href="../css/login_register.css">
 
-	<title>Login Form - Pure Coding</title>
 </head>
 <body>
 	<div class="container">
