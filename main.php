@@ -10,7 +10,9 @@
     </head>
     <body>
     
-    
+    <div class="text-center">
+        <p>Text</p>
+    </div>
     <?php include 'footer.php'?>
     </body>
 </html>
