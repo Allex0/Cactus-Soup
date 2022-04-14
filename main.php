@@ -9,10 +9,10 @@
         <?php include 'navbar.php'?>
     </head>
     <body>
-    
-    <div class="text-center">
-        <p>Text</p>
-    </div>
+        <div class="container-md">
+
+        
+        </div>
     <?php include 'footer.php'?>
     </body>
 </html>
