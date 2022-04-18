@@ -10,7 +10,23 @@
     </head>
     <body>
         <div class="container-md">
+            <div class="search-form">
+                <form action="" method="GET" name="">
 
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="text" name="k" placeholder="Search" autocomplete="off">  
+                            </td>
+                            <td>
+                                <input type="submit" name="" name="search">
+                            </td>
+                        </tr>
+                    </table>
+
+                </form>
+
+            </div>
         
         </div>
     <?php include 'footer.php'?>
