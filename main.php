@@ -78,12 +78,14 @@
                             <td>' . $row['ano'] .'</td>
                             </tr>';
                         }
-                        echo '</table>';
+                        
                     }
+                    
                     else
                     {
                         echo "No results found";
                     }
+                    echo '</table>';
                 }
 
 
