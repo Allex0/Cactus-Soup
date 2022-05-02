@@ -144,6 +144,25 @@ $_SESSION['LAST_ACTIVITY'] = $time;
         
         <div class="container">
                 <div class="cell-3">
+                    <div class="box-text-principal">
+                        <p>Plataforma de filmes e series</p>
+                    </div>
+
+                    <div class="box-text-secundario">
+                        <p>Acompanhe, compartilhe e descubra seus filmes e séries favoritos com o Cactus Soup.</p>
+                    </div>
+
+                    <div class="box-feature">
+                        <img src="track.png" height="80" width="80"> 
+                        <div class="box-feature-text-principal">
+                            <p class="">
+                                Descobre
+                            </p>
+                            <div class="box-feature-text-secundario">
+                                <p class="">adada</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
         </div>
         

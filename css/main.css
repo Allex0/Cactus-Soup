@@ -11,7 +11,33 @@ body {
   background-color: #F5F5F5;
 }
 
-
+.box-text-principal{
+  margin-top: 10px;
+  color: #84CC16;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 35px;
+}
+.box-text-secundario{
+  color: #F5F5F5;
+  font-size: 15px;
+  text-align: center;
+  font-size: 20px;
+}
+.box-feature{
+  margin-top: 5%;
+  margin-left: 5%;
+  display: flex;
+}
+.box-feature-text-principal{
+  color: #84CC16;
+  margin-top: 1%;
+  display: flex;
+  font-size: 20px;
+}
+.box-feature-text-secundario{
+  color: #F5F5F5;
+}
 /* GRID */
 .container {
   height: 90vh;
