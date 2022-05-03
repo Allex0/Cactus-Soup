@@ -28,6 +28,7 @@ body {
   margin-top: 5%;
   margin-left: 5%;
   display: flex;
+  align-self: center;
 }
 .box-feature-text-principal{
   color: #84CC16;
@@ -37,6 +38,7 @@ body {
 }
 .box-feature-text-secundario{
   color: #F5F5F5;
+  display: flex;
 }
 /* GRID */
 .container {
@@ -84,6 +86,19 @@ body {
   background: blueviolet;
   grid-area: footer;
 }
+
+.box-container{
+  height: 90vh;
+  width: 80vw;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-areas: "object object object"
+                       "main main main"
+                       "footer footer footer";
+  grid-template-rows: 1fr 5fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
 @media only screen and (max-width: 600px) {
   .container{
     width: 100%;

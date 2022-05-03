@@ -155,11 +155,11 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                     <div class="box-feature">
                         <img src="track.png" height="80" width="80"> 
                         <div class="box-feature-text-principal">
-                            <p class="">
+                            <p>
                                 Descobre
                             </p>
                             <div class="box-feature-text-secundario">
-                                <p class="">adada</p>
+                                <p>adada</p>
                             </div>
                         </div>
                     </div>
