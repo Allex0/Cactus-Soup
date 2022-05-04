@@ -32,14 +32,17 @@ body {
 }
 .box-feature-text-principal{
   color: #84CC16;
-  margin-top: 1%;
-  display: flex;
+  margin-top: 0;
+  display: inline-block;
   font-size: 20px;
+  margin-left: 10px;
 }
 .box-feature-text-secundario{
   color: #F5F5F5;
-  display: flex;
+  display: block;
+  font-size: 15px;
 }
+
 /* GRID */
 .container {
   height: 90vh;
