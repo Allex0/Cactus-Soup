@@ -143,7 +143,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
         </div>
         
         <div class="container">
-                <div class="cell-3">
+                <div class="box">
                     <div class="box-text-principal">
                         <p>Plataforma de filmes e series</p>
                     </div>
