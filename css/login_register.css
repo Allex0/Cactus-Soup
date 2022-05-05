@@ -16,13 +16,9 @@
 }
 
 body {
-    background-color: #27272A;
+    background-color: #525252;
     width: 100%;
     min-height: 100vh;
-    background-position: center;
-    background-size: cover;
-    justify-content: center;
-    align-items: center;
 }
 
 ::placeholder{
@@ -36,6 +32,8 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0,0,0,.3);
     padding: 40px 30px;
+    margin: auto;
+    margin-top: 20px;
 }
 
 .container .login-text {
@@ -52,6 +50,7 @@ body {
     width: 100%;
     height: 50px;
     margin-bottom: 25px;
+    
 }
 
 .container .login-email .input-group input {

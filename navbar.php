@@ -57,7 +57,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
   </head>
   <body>
     <header>
-      <div id="brand"><a href="main.php">Cactus Soup</a></div>
+      <div id="brand"><a href="/cactus-soup/main.php">Cactus Soup</a></div>
       <nav>
         <ul class="float-left">
           <li><a href="/home">Top Filmes</a></li>
@@ -71,7 +71,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
               }
               else
               {
-                echo'<li id="login"> <a href="login_register/login.php" >Login</a> </li>';
+                echo'<li id="login"> <a href="../login_register/login.php" >Login</a> </li>';
               }
             ?>
 
@@ -82,7 +82,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
               }
               else
               {
-                echo'<li id="signup"> <a href="login_register/register.php" >Registar</a> </li>';
+                echo'<li id="signup"> <a href="../login_register/register.php" >Registar</a> </li>';
               }
             ?>
         </ul>
@@ -103,7 +103,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
               }
               else
               {
-                echo'<li id="login"> <a href="login_register/login.php" >Login</a> </li>';
+                echo'<li id="login"> <a href="../login_register/login.php" >Login</a> </li>';
               }
             ?>
 
@@ -114,7 +114,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
               }
               else
               {
-                echo'<li id="signup"> <a href="login_register/login.php" >Registar</a> </li>';
+                echo'<li id="signup"> <a href="../login_register/login.php" >Registar</a> </li>';
               }
             ?>
         </ul>

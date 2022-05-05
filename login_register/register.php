@@ -62,23 +62,23 @@ if(isset($_POST['submit'])) {
 <body>
     <div class="container">
         <form action="" method="POST" class="login-email">
-            <p class="login-text">Register</p>
+            <p class="login-text">Registar</p>
             <div class="input-group">
-                <input type="text" placeholder="Username" name="username" value="<?php echo $username; ?>" required>
+                <input type="text" placeholder="Nome do utilizador" name="username" value="<?php echo $username; ?>" required>
             </div>
             <div class="input-group">
                 <input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
             </div>
             <div class="input-group">
-                <input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required>
+                <input type="password" placeholder="Palavra-passe" name="password" value="<?php echo $_POST['password']; ?>" required>
             </div>
             <div class="input-group">
-                <input type="password" placeholder="Confirm Password" name="cpassword" value="<?php echo $_POST['cpassword']; ?>" required>
+                <input type="password" placeholder="Confirmar palavra-passe" name="cpassword" value="<?php echo $_POST['cpassword']; ?>" required>
             </div>
             <div class="input-group">
-                <button name="submit" class="btn">Register</button>
+                <button name="submit" class="btn">Registar</button>
             </div>
-            <p class="login-register-text">Have an account? <a href="login.php"> Login here </a></p>
+            <p class="login-register-text">Ja tem conta? <a href="login.php"> Login aqui </a></p>
         </form>
     </div>
 </body>
