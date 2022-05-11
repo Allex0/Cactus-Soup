@@ -82,7 +82,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
               }
               else
               {
-                echo'<li id="signup"> <a href="../login_register/register.php" >Registar</a> </li>';
+                echo'<li id="signup"> <a href="/cactus-soup/login_register/register.php" >Registar</a> </li>';
               }
             ?>
         </ul>

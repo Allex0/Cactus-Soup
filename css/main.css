@@ -7,7 +7,6 @@
   --light-color: #F5F5F5;
     }
 body {
-  margin: 0;
   background-color: #F5F5F5;
 }
 
@@ -45,7 +44,7 @@ body {
 
 /* GRID */
 .container {
-  height: 90vh;
+  height: 60vh;
   width: 80vw;
   margin: 2rem auto;
   display: grid;
@@ -61,24 +60,22 @@ body {
 }
 
 .box {
-  margin: 0;
+  margin-top: 0;
   height: 60vh;
   grid-area: main;
-  color: black;
   background-color: #52525B;
   border-radius: 25px;
-  grid-row: row 2;
   display: grid;
   grid-gap: 10px;
+  grid-row: row 2;
   grid-template-columns: 1fr 1fr;
-  
 }
 
 .box-nested-principal{
 align-items: center;
 grid-column: 1 / 3;
 grid-row: 1;
-}
+} 
 
 .box-nested-feature-1{
   grid-column: 1;
