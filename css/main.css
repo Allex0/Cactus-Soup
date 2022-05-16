@@ -88,6 +88,15 @@ grid-row: 1;
 }
 
 /* main page search bar*/
+.container-search{
+  margin-top:5%;
+}
+/* Style to create scroll bar in dropdown */ 
+.scrollable-dropdown{
+    height: auto;
+    max-height:320px;  /* Increase / Decrease value as per your need */
+    overflow-x: hidden;
+}
 
 @media only screen and (max-width: 600px) {
   .container{
