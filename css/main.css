@@ -87,16 +87,46 @@ grid-row: 1;
   grid-row: 2;
 }
 
-/* main page search bar*/
-.container-search{
-  margin-top:5%;
+/* Search bar*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.search {
+  margin-left: 2%;
+  width: 50%;
+  position: relative;
+  display: flex;
+  height: 36px;
 }
-/* Style to create scroll bar in dropdown */ 
-.scrollable-dropdown{
-    height: auto;
-    max-height:320px;  /* Increase / Decrease value as per your need */
-    overflow-x: hidden;
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
 }
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+
 
 @media only screen and (max-width: 600px) {
   .container{
