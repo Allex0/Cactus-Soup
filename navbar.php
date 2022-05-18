@@ -62,7 +62,6 @@ $_SESSION['LAST_ACTIVITY'] = $time;
         <ul class="float-left">
           <li><a href="/home">Top Filmes</a></li>
           <li><a href="/products">Top Seris</a></li>
-          <li><a href="/about">Sobre nos</a></li>
            
             <?php 
               if (isset($_SESSION['username'])) 
@@ -71,7 +70,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
               }
               else
               {
-                echo'<li id="login"> <a href="../login_register/login.php" >Login</a> </li>';
+                echo'<li id="login"> <a href="../cactus-soup/login_register/login.php" >Login</a> </li>';
               }
             ?>
 
@@ -94,7 +93,6 @@ $_SESSION['LAST_ACTIVITY'] = $time;
         <ul class="mobile-menu">
           <li><a href="/home">Top Filmes</a></li>
           <li><a href="/products">Top Seris</a></li>
-          <li><a href="/about">Sobre Nos</a></li>
 
           <?php 
               if (isset($_SESSION['username'])) 
