@@ -105,17 +105,17 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                     
         </div>  </div>
         
-        <div class="container-md">
-            <div class="search-form">
-                <form action="" method="GET" name="">
+        <div class="container">
+            <div class="">
+                <form class="" action="" method="GET" name="">
 
                     <table>
                         <tr>
-                            <td>
-                                <input type="text" name="k" placeholder="Search" autocomplete="off">  
+                            <td class="">
+                                <input class="search-form" type="text" name="k" placeholder="Search" autocomplete="off">  
                             </td>
                             <td>
-                                <input type="submit" name="" name="search">
+                                <input class="submit-button" type="submit" name="" name="search">
                             </td>
                         </tr>
                     </table>
@@ -158,7 +158,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                     if ($result_count > 0)
                     {
                         // mostrar o nr de resultados
-                        echo '<div class""><b><u>' . $result_count . '</u></b></div>';
+                        echo '<div class=""><b><u>' . $result_count . '</u></b></div>';
                         echo 'Your search for <i>' . $display_words . '</i> <hr /> <br>';
 
                         // mostrar os resultados
