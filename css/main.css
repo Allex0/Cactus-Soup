@@ -97,13 +97,12 @@ grid-row: 1;
 }
 
 .submit-button {
-  background: #525252;
-  color: #fff;
-  border: 1px solid #eee;
-  border-radius: 20px;
-  box-shadow: 5px 5px 5px #eee;
-  text-shadow: none;
-  height: 15px;
+  background: #525252; 
+  color: #fff; 
+  border: 1px solid #84cc16; 
+  border-radius: 20px; 
+  height: 40px;
+  width: 100px; 
   }
 
   .submit-button:hover {
