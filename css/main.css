@@ -96,6 +96,10 @@ grid-row: 1;
   height: 15px; 
 }
 
+.search{
+  color: black;
+}
+
 .submit-button {
   background: #525252; 
   color: #fff; 

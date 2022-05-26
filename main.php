@@ -158,16 +158,16 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                     if ($result_count > 0)
                     {
                         // mostrar o nr de resultados
-                        echo '<div class=""><b><u>' . $result_count . '</u></b></div>';
-                        echo 'Your search for <i>' . $display_words . '</i> <hr /> <br>';
+                        echo '<div class="search"><b><u>' . $result_count . '</u></b></div>';
+                        echo '<p class="search">Your search for <i>' . $display_words . '</i> </p><hr /> <br>';
 
                         // mostrar os resultados
                         while ($row = mysqli_fetch_assoc($query))
                         {
                             echo '<tr class="search">
-                            <td>' . $row['nome'] .'</td>
-                            <td>' . $row['descricao'] .'</td>
-                            <td>' . $row['ano'] .'</td>
+                            <td class="search">' . $row['nome'] .'</td>
+                            <td class="search">' . $row['descricao'] .'</td>
+                            <td class="search">' . $row['ano'] .'</td>
                             </tr>';
                         }
                         
