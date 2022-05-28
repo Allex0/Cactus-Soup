@@ -118,6 +118,8 @@ grid-row: 1;
   text-shadow: none;
   }
 
+
+  
 @media only screen and (max-width: 600px) {
   .container{
     width: 100%;
