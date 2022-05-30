@@ -164,9 +164,23 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                         // mostrar os resultados
                         while ($row = mysqli_fetch_assoc($query))
                         {
+
+                            echo '
+                            <div class="movie-card">
+                            <div class="card">
+                                <div class="movie-card-description">
+                                <h1 class="movie-title">'. $row['nome'] .'</h1>
+                                <p class="movie-subtitle"> (' . $row['ano'] .') Adventure, Action </p>
+                                <p class="movie-shorts"></p>
+                                <button type="button" class="watch-btn"><i class="fa fa-play" aria-hidden="true"></i> &emsp; Watch Trailer</button>
+                            </div>
+                            </div>'
+                            ;
+
+
                             echo '<tr class="search">
                             <td class="search">' . $row['nome'] .'</td>
-                            <td class="search">' . $row['descricao'] .'</td>
+                            <td class="search"> </td>
                             <td class="search">' . $row['ano'] .'</td>
                             </tr>';
                         }
@@ -187,9 +201,17 @@ $_SESSION['LAST_ACTIVITY'] = $time;
             </div>
         
         </div>
-                
-        
-        
+           <!--     
+        <div class="movie-card">
+    
+   <div class="card">
+     <div class="movie-card-description">
+      <h1 class="movie-title">Fairy Tail</h1>
+       <p class="movie-subtitle">(2006) Adventure fiction, Fantasy</p>
+       <p class="movie-shorts">Fairy Tail is set in Earth-land, a fictional land where wizards coalesce into guilds to apply their magical abilities for paid job requests. Novice wizard Lucy Heartfilia runs away from home to join Fairy Tail, a guild famous for its members' overly destructive antics.</p>
+       <button type="button" class="watch-btn"><i class="fa fa-play" aria-hidden="true"></i> &emsp; Watch Trailer</button>
+    </div>
+            -->
     </body>
 </html>
 
