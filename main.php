@@ -64,46 +64,46 @@ $_SESSION['LAST_ACTIVITY'] = $time;
         
         
         <div class="container">
-                <div class="box">
-                    <div class="box-nested-principal">    
-                        <div class="box-text-principal">
-                            <p>Plataforma de filmes e series</p>
-                        </div>
+            <div class="box">
+                <div class="box-nested-principal">    
+                    <div class="box-text-principal">
+                        <p>Plataforma de filmes e series</p>
+                    </div>
 
-                        <div class="box-text-secundario">
-                            <p>Acompanhe, compartilhe e descubra seus filmes e séries favoritos com o Cactus Soup.</p>
-                        </div>
+                    <div class="box-text-secundario">
+                        <p>Acompanhe, compartilhe e descubra seus filmes e séries favoritos com o Cactus Soup.</p>
                     </div>
-                    <div class="box-nested-feature-1">
-                        <div class="box-feature">
-                            <img src="track.png" height="100" width="100"> 
-                            <div class="box-feature-text-principal">
-                                <p>
-                                    Descobre
-                                </p>
-                                <div class="box-feature-text-secundario">
-                                    <p>Quer encontrar un bom <br>filme para ver esta tarde? <br>
-                                        Procura no nosso site!</p>
-                                </div>
+                </div>
+                <div class="box-nested-feature-1">
+                    <div class="box-feature">
+                        <img src="track.png" height="100" width="100"> 
+                        <div class="box-feature-text-principal">
+                            <p>
+                                Descobre
+                            </p>
+                            <div class="box-feature-text-secundario">
+                                <p>Quer encontrar un bom <br>filme para ver esta tarde? <br>
+                                    Procura no nosso site!</p>
                             </div>
                         </div>
                     </div>
-                    <div class="box-nested-feature-2">
-                        <div class="box-feature">
-                            <img src="track.png" height="100" width="100">
-                            <div class="box-feature-text-principal">
-                                <p>
-                                    Descobre
-                                </p>
-                                <div class="box-feature-text-secundario">
-                                    <p><p>Quer encontrar un bom <br>filme para ver esta tarde? <br>
-                                        Procura no nosso site!</p>
-                                </div>
+                </div>
+                <div class="box-nested-feature-2">
+                    <div class="box-feature">
+                        <img src="track.png" height="100" width="100">
+                        <div class="box-feature-text-principal">
+                            <p>
+                                Descobre
+                            </p>
+                            <div class="box-feature-text-secundario">
+                                <p><p>Quer encontrar un bom <br>filme para ver esta tarde? <br>
+                                    Procura no nosso site!</p>
                             </div>
                         </div>
-                    </div>    
-                    
-        </div>  </div>
+                    </div>
+                </div>    
+            </div>        
+        </div>  
         
         <div class="container">
             <div class="">
