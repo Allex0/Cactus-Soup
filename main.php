@@ -166,7 +166,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                         {
 
                             echo '
-                            <div class="movie-card">
+                            <div id="content">
                             <div class="card">
                                 <div class="movie-card-description">
                                 <h1 class="movie-title">'. $row['nome'] .'</h1>
@@ -212,6 +212,67 @@ $_SESSION['LAST_ACTIVITY'] = $time;
        <button type="button" class="watch-btn"><i class="fa fa-play" aria-hidden="true"></i> &emsp; Watch Trailer</button>
     </div>
             -->
+    
+<div id="content">
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+	<div class="movie-spacer"></div>
+</div>
     </body>
 </html>
 
