@@ -167,7 +167,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
 
                             echo '
                             <div id="content">
-                            <div class="card">
+                            <div class="movie">
                                 <div class="movie-card-description">
                                 <h1 class="movie-title">'. $row['nome'] .'</h1>
                                 <p class="movie-subtitle"> (' . $row['ano'] .') Adventure, Action </p>
@@ -212,68 +212,78 @@ $_SESSION['LAST_ACTIVITY'] = $time;
        <button type="button" class="watch-btn"><i class="fa fa-play" aria-hidden="true"></i> &emsp; Watch Trailer</button>
     </div>
             -->
+            <div class="wrapper">
+
+<h2><strong>All Games<span>( 4 )</span></strong></h2>
+
+<div class="cards">
+
+    <figure class="card">
+
+        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/1.jpg" />
+
+        <figcaption>Dota 2</figcaption>
+
+    </figure>
+
+    <figure class="card">
+
+        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/2.jpg" />
+
+        <figcaption>Stick Fight</figcaption>
+
+    </figure>
+
+    <figure class="card">
+
+        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/3.jpg" />
+
+        <figcaption>Minion Masters</figcaption>
+
+    </figure>
+
+    <figure class="card">
+
+        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/4.jpg" />
+
+        <figcaption>KoseBoz!</figcaption>
+
+    </figure>
+    <figure class="card">
+
+        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/4.jpg" />
+
+        <figcaption>KoseBoz!</figcaption>
+
+    </figure>
+    <figure class="card">
+
+        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/4.jpg" />
+
+        <figcaption>KoseBoz!</figcaption>
+
+    </figure>
+    <figure class="card">
+
+        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/4.jpg" />
+
+        <figcaption>KoseBoz!</figcaption>
+
+    </figure>
+    <figure class="card">
+
+        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/4.jpg" />
+
+        <figcaption>KoseBoz!</figcaption>
+
+    </figure>
     
-<div id="content">
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
-	<div class="movie-spacer"></div>
+
 </div>
-    </body>
+
+
+            
+</body>
 </html>
 
 <?php include 'footer.php'?>
