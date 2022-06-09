@@ -158,31 +158,31 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                     if ($result_count > 0)
                     {
                         // mostrar o nr de resultados
-                        echo '<div class="search"><b><u>' . $result_count . '</u></b></div>';
-                        echo '<p class="search">Your search for <i>' . $display_words . '</i> </p><hr /> <br>';
+                        echo '<h2><strong>Resultados encontrados: <span>'. $result_count .'</span></strong></h2>';
+                        //echo '<p class="search">Your search for <i>' . $display_words . '</i> </p><hr /> <br>';
 
                         // mostrar os resultados
                         while ($row = mysqli_fetch_assoc($query))
                         {
-
+                            $local_imagem = "/cactus-soup/movies/" . $row['nome'] . " ". $row['ano'] . "/" . $row['nome'] . " ".$row['ano'];
+                            echo $local_imagem;
                             echo '
-                            <div id="content">
-                            <div class="movie">
-                                <div class="movie-card-description">
-                                <h1 class="movie-title">'. $row['nome'] .'</h1>
-                                <p class="movie-subtitle"> (' . $row['ano'] .') Adventure, Action </p>
-                                <p class="movie-shorts"></p>
-                                <button type="button" class="watch-btn"><i class="fa fa-play" aria-hidden="true"></i> &emsp; Watch Trailer</button>
+                            <div class="wrapper">
+                            <div class="cards">
+
+                            <figure class="card">
+                                
+                                <img src="'. $local_imagem .'" />
+
+                                <figcaption>'. $row['nome'] .'</figcaption>
+
+                            </figure>
+                                
                             </div>
                             </div>'
                             ;
 
 
-                            echo '<tr class="search">
-                            <td class="search">' . $row['nome'] .'</td>
-                            <td class="search"> </td>
-                            <td class="search">' . $row['ano'] .'</td>
-                            </tr>';
                         }
                         
                     }
@@ -212,74 +212,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
        <button type="button" class="watch-btn"><i class="fa fa-play" aria-hidden="true"></i> &emsp; Watch Trailer</button>
     </div>
             -->
-            <div class="wrapper">
 
-<h2><strong>All Games<span>( 4 )</span></strong></h2>
-
-<div class="cards">
-
-    <figure class="card">
-
-        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/1.jpg" />
-
-        <figcaption>Dota 2</figcaption>
-
-    </figure>
-
-    <figure class="card">
-
-        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/2.jpg" />
-
-        <figcaption>Stick Fight</figcaption>
-
-    </figure>
-
-    <figure class="card">
-
-        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/3.jpg" />
-
-        <figcaption>Minion Masters</figcaption>
-
-    </figure>
-
-    <figure class="card">
-
-        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/4.jpg" />
-
-        <figcaption>KoseBoz!</figcaption>
-
-    </figure>
-    <figure class="card">
-
-        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/4.jpg" />
-
-        <figcaption>KoseBoz!</figcaption>
-
-    </figure>
-    <figure class="card">
-
-        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/4.jpg" />
-
-        <figcaption>KoseBoz!</figcaption>
-
-    </figure>
-    <figure class="card">
-
-        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/4.jpg" />
-
-        <figcaption>KoseBoz!</figcaption>
-
-    </figure>
-    <figure class="card">
-
-        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/4.jpg" />
-
-        <figcaption>KoseBoz!</figcaption>
-
-    </figure>
-    
-
-</div>
 
 
             

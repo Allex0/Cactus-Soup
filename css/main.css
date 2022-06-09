@@ -488,7 +488,6 @@ body {
 }
 
 .wrapper {
-  background-color: red;
     padding: 15px;
 }
 
@@ -501,8 +500,9 @@ h2 {
 
 h2 strong {
     z-index: 2;
-    background: #24282f;
+    background: #27272A;
     padding: 4px 8px;
+    font-size: 18px;
 }
 
 h2 span {
