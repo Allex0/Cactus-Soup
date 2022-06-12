@@ -165,6 +165,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                         while ($row = mysqli_fetch_assoc($query))
                         {
                             $local_imagem = "/cactus-soup/movies/" . $row['nome'] . " ". $row['ano'] . "/" . $row['nome'] . " ".$row['ano'];
+                            $local_file = "/cactus-soup/movies/" . $row['nome'] . " ". $row['ano'] . "/" . $row['nome'] . " ".$row['ano'].'.php';
                             echo '
                             <div class="wrapper">
                             <div class="cards">
@@ -173,7 +174,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                                 
                                 <img src="'. $local_imagem .'" />
 
-                                <figcaption>'. $row['nome'] .'</figcaption>
+                                <a href="'. $local_file .'"><figcaption>'. $row['nome'] .'</figcaption></a>
 
                             </figure>
                                 
