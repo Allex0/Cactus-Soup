@@ -165,7 +165,6 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                         while ($row = mysqli_fetch_assoc($query))
                         {
                             $local_imagem = "/cactus-soup/movies/" . $row['nome'] . " ". $row['ano'] . "/" . $row['nome'] . " ".$row['ano'];
-                            echo $local_imagem;
                             echo '
                             <div class="wrapper">
                             <div class="cards">
