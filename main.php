@@ -1,5 +1,5 @@
-<?php 
-    include("./define_variables.php");
+<?php
+include("./define_variables.php");
 ?>
 <?php
 include 'login_register/config.php';
@@ -19,9 +19,11 @@ $time = $_SERVER['REQUEST_TIME'];
 
 //Check the user's session exist or not
 
-if (isset($_SESSION['LAST_ACTIVITY']) &&
+if (
+    isset($_SESSION['LAST_ACTIVITY']) &&
 
-   ($time - $_SESSION['LAST_ACTIVITY']) > $duration) {
+    ($time - $_SESSION['LAST_ACTIVITY']) > $duration
+) {
 
     //Unset the session variables
 
@@ -37,11 +39,8 @@ if (isset($_SESSION['LAST_ACTIVITY']) &&
 
     //echo "<script> alert('Session is created');</script>";
 
-}
-
-else
-{    
-  // echo "Current session exists.<br/>";  
+} else {
+    // echo "Current session exists.<br/>";  
 }
 
 //Set the time of the user's last activity
@@ -51,25 +50,23 @@ $_SESSION['LAST_ACTIVITY'] = $time;
 ?>
 <!doctype html>
 <html lang="en">
-    <head>
-        <script src="index.js"></script>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="css\main.css">
-        <link rel="stylesheet" type="text/css" href="css\search_bar.scss">
-        <title>Cactus Soup</title>
-        <?php include 'navbar.php'?>
-    </head>
-    <body>
-        
-            <?php 
-              if (isset($_SESSION['username'])) 
-              {
-                
-              }
-              else
-              {
-                echo'
+
+<head>
+    <script src="index.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css\main.css">
+    <link rel="stylesheet" type="text/css" href="css\search_bar.scss">
+    <title>Cactus Soup</title>
+    <?php include 'navbar.php' ?>
+</head>
+
+<body>
+
+    <?php
+    if (isset($_SESSION['username'])) {
+    } else {
+        echo '
                 <div class="container">
             <div class="box">
                 <div class="box-nested-principal">    
@@ -112,113 +109,102 @@ $_SESSION['LAST_ACTIVITY'] = $time;
             </div>        
         </div>  
                 ';
-              }
-            ?>
-        
-        
-        <div class="container">
-            <div class="">
-                <form class="" action="" method="GET" name="">
+    }
+    ?>
 
-                    <table>
-                        <tr>
-                            <td class="">
-                                <input class="search-form" type="text" name="k" placeholder="Search" autocomplete="off">  
-                            </td>
-                            <td class="">
-                                <input class="submit-button" type="submit" name="" name="search">
-                            </td>
-                        </tr>
-                    </table>
 
-                </form>
+    <div class="container">
+        <div class="">
+            <form class="" action="" method="GET" name="">
 
-                
-                <?php
-                // verificar se o input tem algum valor
-                if (isset($_GET['k']) && $_GET['k'] != '')
-                {
-                    $k = trim($_GET['k']); // " d " = "d"
+                <table>
+                    <tr>
+                        <td class="">
+                            <input class="search-form" type="text" name="k" placeholder="Search" autocomplete="off">
+                        </td>
+                        <td class="">
+                            <input class="submit-button" type="submit" name="" name="search">
+                        </td>
+                    </tr>
+                </table>
 
-                    // criar a query mysql
-                    $query_string = "SELECT * FROM filmes WHERE ";
-                    $display_words = "";
+            </form>
 
-                    // separar cada keyword
-                    $keywords = explode(' ', $k);
 
-                    foreach($keywords as $word)
-                    {
-                        $query_string .= " keywords LIKE '%". $word . "%' OR";
+            <?php
+            // verificar se o input tem algum valor
+            if (isset($_GET['k']) && $_GET['k'] != '') {
+                $k = trim($_GET['k']); // " d " = "d"
 
-                        $display_words .= $word . " ";
+                // criar a query mysql
+                $query_string = "SELECT * FROM filmes WHERE ";
+                $display_words = "";
 
-                    }
+                // separar cada keyword
+                $keywords = explode(' ', $k);
 
-                    $query_string = substr($query_string, 0, strlen($query_string) - 3);
+                foreach ($keywords as $word) {
+                    $query_string .= " keywords LIKE '%" . $word . "%' OR";
 
-                    // conectar a base de dados
-                    $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+                    $display_words .= $word . " ";
+                }
 
-                    $query = mysqli_query($conn, $query_string);
-                    $result_count = mysqli_num_rows($query);
+                $query_string = substr($query_string, 0, strlen($query_string) - 3);
 
-                    // verificar se temos alguns resultados
-                    echo '<table>';
-                    if ($result_count > 0)
-                    {
-                        // mostrar o nr de resultados
-                        echo '<h2><strong>Resultados encontrados: <span>'. $result_count .'</span></strong></h2>';
-                        //echo '<p class="search">Your search for <i>' . $display_words . '</i> </p><hr /> <br>';
+                // conectar a base de dados
+                $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 
-                        // mostrar os resultados
-                        while ($row = mysqli_fetch_assoc($query))
-                        {
-                            $local_imagem = "/cactus-soup/movies/images/" . $row['nome'] . " ".$row['ano'];
-                            echo '
-                            <div class="wrapper">
-                            <div class="cards">
+                $query = mysqli_query($conn, $query_string);
+                $result_count = mysqli_num_rows($query);
+
+                // verificar se temos alguns resultados
+                if ($result_count > 0) {
+                    // mostrar o nr de resultados
+                    echo '<h2><strong>Resultados encontrados: <span>' . $result_count . '</span></strong></h2>';
+                    //echo '<p class="search">Your search for <i>' . $display_words . '</i> </p><hr /> <br>';
+
+                    // mostrar os resultados
+                    echo '<div class="wrapper">
+                        <div class="cards">';
+                    while ($row = mysqli_fetch_assoc($query)) {
+                        $local_imagem = "/cactus-soup/movies/images/" . $row['nome'] . " " . $row['ano'];
+                        echo '
                             <figure class="card">
                            
                                 
-                                <img src="'. $row['imgpath'] .'" />
+                                <img src="' . $row['imgpath'] . '" />
 
                                 <figcaption>
                                 <form action="/cactus-soup/movies/movies.php" method="POST">
-                                <input class="button" type="submit" name="submit" value="'. $row['nome'] .'">
+                                <input class="button" type="submit" name="submit" value="' . $row['nome'] . '">
                                 </form>
                                 </figcaption>
                                 
-                            </figure>
-                            </div>
-                            </div>'
-                            ;
-
-
-                        }
-                        
+                            </figure>';
                     }
-                    
-                    else
-                    {
-                        echo "No results found";
-                    }
-                    echo '</table>';
+                    echo '
+                        </div>
+                        </div>';
+                } else {
+                    echo "No results found";
                 }
+                echo '</table>';
+            }
 
 
 
-                ?>
+            ?>
 
-            </div>
-        
         </div>
-        
+
+    </div>
 
 
 
-            
+
+
 </body>
+
 </html>
 
-<?php include 'footer.php'?>
+<?php include 'footer.php' ?>
