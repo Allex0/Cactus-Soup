@@ -64,9 +64,10 @@ $_SESSION['LAST_ACTIVITY'] = $time;
           <li><a href="/products">Top Seris</a></li>
            
             <?php 
+              $username = $_SESSION['username'];
               if (isset($_SESSION['username'])) 
               {
-                echo '<li> <a href="#"> ' + $_SESSION['username'] + ' </a></li>';
+                echo '<li> <a href="#"> ' + $username + ' </a></li>';
               }
               else
               {

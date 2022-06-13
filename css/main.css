@@ -417,6 +417,17 @@ body{
   color: #fffb01 !important;
 }
 
+.button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  color: #F5F5F5;
+  font-size: 1.7vh;
+  overflow: hidden;
+  outline: none;
+}
+
 /* End */
   
 .abs,
@@ -559,6 +570,7 @@ h2:after {
     color: #fff;
     transform: translateY(100%);
     transition: 0.3s;
+    display: inline-block;
 }
 
 .cards .card:after,

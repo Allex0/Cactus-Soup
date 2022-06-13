@@ -154,7 +154,6 @@ $_SESSION['LAST_ACTIVITY'] = $time;
 
                     // verificar se temos alguns resultados
                     echo '<table>';
-
                     if ($result_count > 0)
                     {
                         // mostrar o nr de resultados
@@ -164,20 +163,22 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                         // mostrar os resultados
                         while ($row = mysqli_fetch_assoc($query))
                         {
-                            $local_imagem = "/cactus-soup/movies/" . $row['nome'] . " ". $row['ano'] . "/" . $row['nome'] . " ".$row['ano'];
-                            $local_file = "/cactus-soup/movies/" . $row['nome'] . " ". $row['ano'] . "/" . $row['nome'] . " ".$row['ano'].'.php';
+                            $local_imagem = "/cactus-soup/movies/images/" . $row['nome'] . " ".$row['ano'];
                             echo '
                             <div class="wrapper">
                             <div class="cards">
-
                             <figure class="card">
+                           
                                 
-                                <img src="'. $local_imagem .'" />
+                                <img src="'. $row['imgpath'] .'" />
 
-                                <a href="'. $local_file .'"><figcaption>'. $row['nome'] .'</figcaption></a>
-
+                                <figcaption>
+                                <form action="/cactus-soup/movies/movies.php" method="POST">
+                                <input class="button" type="submit" name="submit" value="'. $row['nome'] .'">
+                                </form>
+                                </figcaption>
+                                
                             </figure>
-                                
                             </div>
                             </div>'
                             ;
