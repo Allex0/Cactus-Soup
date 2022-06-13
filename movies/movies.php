@@ -73,38 +73,50 @@ if (isset($_POST['submit'])) {
     //$nsql = "UPDATE user1 SET mid = '$movieid'";
   echo '<body class="">
 
-  <div class="every">
+    <style>
+    .teste {
+      font-weight: 100;
+      font-family: "Source Sans Pro", sans-serif;
+      list-style: none;
+      text-decoration: none;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-size: 10px;
+    }
+    </style>
+
+  <div class="">
   <section class="tv-content">
     <div class="bg">
-      <div class="content">
+      <div class="content ">
         <div class="image">
           <img width="300" height="450" src="'. $imgpath .'" />
         </div>
-        <div class="info every">
+        <div class="info ">
           <div class="title">
             <a href="#">
-              <h2>' . $title . '</h2>
+              <h2 style="font-size: 15px">' . $title . '</h2>
             </a>
-            <span>(' . $year . ')</span>
+            <span style="font-size: 15px">(' . $year . ')</span>
           </div>
-          <div class="meta-actions">
+          <div class="meta-actions every">
             <div class="score">
               <div class="percentage-circle">
                 <div class="percentage-circle-stroke">
                   <div class="percent">
-                    <span>'. $median.'
-                    </span>
+                    <span style="font-size: 15px">'. $median.'</span>
                   </div>
                 </div>
               </div>
-              <h1>Nota</h1>
+              <h1 style="font-size: 15px">Nota</h1>
             </div>
-            <ul class="">
+            <ul class="every">
               <li class="add-to-list">
-                <p>Adiciona na lista:</p>
+                <p style="font-size: 15px">Adiciona na lista:</p>
               </li>
               <li class="rate-it">
-                <label><p>Avalia:</p></label>
+                <label><p style="font-size: 15px">Avalia:</p></label>
                 <form action="/action_page.php">
                 <select id="cars" name="cars">
                   <option value="volvo">10</option>
@@ -126,23 +138,72 @@ if (isset($_POST['submit'])) {
           </div>
           <div class="about">
             <div class="overview">
-              <h3>Informação</h3>
-              <p>' . $description . ' </p></div>
+              <h3 style="font-size: 15px">Informação</h3>
+              <p style="font-size: 15px">' . $description . ' </p></div>
             <div class="featured-crew">
-              <h3>Featured Crew</h3>
+              <h3 style="font-size: 15px">Featured Crew</h3>
               <ul>
                 <li>
                   <p>
-                    <a href="#">John Waine</a>
-                  <h1>Director</h1>
+                    <a href="#"style="font-size: 15px">John Waine</a>
+                  <h1 style="font-size: 15px">Director</h1>
                 </p>
               </li>
             <li>
               <p>
-                <a href="#">John Waine</a>
-              <h1>Director</h1>
+                <a href="#"style="font-size: 15px">John Waine</a>
+              <h1 style="font-size: 15px">Director</h1>
             </p>
           </li>
+          <li>
+              <p>
+                <a href="#"style="font-size: 15px">John Waine</a>
+              <h1 style="font-size: 15px">Director</h1>
+            </p>
+          </li>
+          <li>
+              <p>
+                <a href="#"style="font-size: 15px">John Waine</a>
+              <h1 style="font-size: 15px">Director</h1>
+            </p>
+          </li>
+          <li>
+              <p>
+                <a href="#"style="font-size: 15px">John Waine</a>
+              <h1 style="font-size: 15px">Director</h1>
+            </p>
+          </li>
+          <li>
+              <p>
+                <a href="#"style="font-size: 15px">John Waine</a>
+              <h1 style="font-size: 15px">Director</h1>
+            </p>
+          </li>
+          <li>
+              <p>
+                <a href="#"style="font-size: 15px">John Waine</a>
+              <h1 style="font-size: 15px">Director</h1>
+            </p>
+          </li>
+          <li>
+              <p>
+                <a href="#"style="font-size: 15px">John Waine</a>
+              <h1 style="font-size: 15px">Director</h1>
+            </p>
+          </li>
+          <li>
+              <p>
+                <a href="#"style="font-size: 15px">John Waine</a>
+              <h1 style="font-size: 15px">Director</h1>
+            </p>
+          </li>
+          <li>
+              <p>
+                <a href="#"style="font-size: 15px">John Waine</a>
+              <h1 style="font-size: 15px">Director</h1>
+            </p>
+          </li>
+          
         </ul>
     </div>
     </div>
