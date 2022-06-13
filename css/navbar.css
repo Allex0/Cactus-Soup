@@ -23,7 +23,7 @@ header a {
 }
 
 header {
-  padding: 0 20px;
+  padding: 0 20px !important;
   background-color: #27272A;
   height: 50px;
   display: flex;
@@ -31,14 +31,20 @@ header {
 }
 
 #brand {
-  font-weight: bold;
-  font-size: 18px;
+  font-weight: bold ;
+  font-size: 18px ;
   display: flex;
   align-items: center;
+  
 }
 
 #brand a {
   color: #84CC16;
+  
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
 }
 
 ul {
@@ -52,11 +58,13 @@ ul {
 
 ul a {
   color: white;
+  box-sizing: border-box;
+  font-size: 18px;
 }
 
 ul li {
-  padding: 5px;
-  margin-left: 10px;
+  padding: 5px !important;
+  margin-left: 10px !important;
 }
 
 ul li:hover {
@@ -67,7 +75,7 @@ ul li:hover {
 #login,
 #signup {
   border-radius: 5px;
-  padding: 5px 8px;
+  padding: 5px 8px !important;
 }
 
 #login {
@@ -87,7 +95,7 @@ ul li:hover {
 }
 
 #hamburger-icon {
-  margin: auto 0;
+  margin: auto 0 !important;
   display: none;
   cursor: pointer;
 }
@@ -96,32 +104,32 @@ ul li:hover {
   width: 35px;
   height: 3px;
   background-color: white;
-  margin: 6px 0;
+  margin: 6px 0 !important;
   transition: 0.4s;
 }
 
-.open .bar1 {
+#open #bar1 {
   -webkit-transform: rotate(-45deg) translate(-6px, 6px);
   transform: rotate(-45deg) translate(-6px, 6px);
 }
 
-.open .bar2 {
+#open #bar2 {
   opacity: 0;
 }
 
-.open .bar3 {
+#open #bar3 {
   -webkit-transform: rotate(45deg) translate(-6px, -8px);
   transform: rotate(45deg) translate(-6px, -8px);
 }
 
-.open .mobile-menu {
+#open #mobile-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 }
 
-.mobile-menu {
+#mobile-menu {
   display: none;
   position: absolute;
   top: 50px;
@@ -132,8 +140,8 @@ ul li:hover {
   background-color: #52525B;
 }
 
-.mobile-menu li {
-  margin-bottom: 10px;
+#mobile-menu li {
+  margin-bottom: 10px !important;
 }
 
 @media only screen and (max-width: 600px) {

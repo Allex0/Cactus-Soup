@@ -62,8 +62,15 @@ $_SESSION['LAST_ACTIVITY'] = $time;
     </head>
     <body>
         
-        
-        <div class="container">
+            <?php 
+              if (isset($_SESSION['username'])) 
+              {
+                
+              }
+              else
+              {
+                echo'
+                <div class="container">
             <div class="box">
                 <div class="box-nested-principal">    
                     <div class="box-text-principal">
@@ -104,6 +111,10 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                 </div>    
             </div>        
         </div>  
+                ';
+              }
+            ?>
+        
         
         <div class="container">
             <div class="">
@@ -202,17 +213,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
             </div>
         
         </div>
-           <!--     
-        <div class="movie-card">
-    
-   <div class="card">
-     <div class="movie-card-description">
-      <h1 class="movie-title">Fairy Tail</h1>
-       <p class="movie-subtitle">(2006) Adventure fiction, Fantasy</p>
-       <p class="movie-shorts">Fairy Tail is set in Earth-land, a fictional land where wizards coalesce into guilds to apply their magical abilities for paid job requests. Novice wizard Lucy Heartfilia runs away from home to join Fairy Tail, a guild famous for its members' overly destructive antics.</p>
-       <button type="button" class="watch-btn"><i class="fa fa-play" aria-hidden="true"></i> &emsp; Watch Trailer</button>
-    </div>
-            -->
+        
 
 
 

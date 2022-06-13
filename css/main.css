@@ -423,9 +423,9 @@ body{
   border: none;
   cursor: pointer;
   color: #F5F5F5;
-  font-size: 1.7vh;
-  overflow: hidden;
-  outline: none;
+  font-size: 100%;
+  white-space: normal;
+
 }
 
 /* End */

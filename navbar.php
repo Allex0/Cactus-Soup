@@ -54,12 +54,15 @@ $_SESSION['LAST_ACTIVITY'] = $time;
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/navbar.css" />
+    <style>
+      
+    </style>
   </head>
   <body>
-    <header>
+    <header id="all">
       <div id="brand"><a href="/cactus-soup/main.php">Cactus Soup</a></div>
       <nav>
-        <ul class="float-left">
+        <ul id="float-left">
           <li><a href="/home">Top Filmes</a></li>
           <li><a href="/products">Top Seris</a></li>
            
@@ -67,7 +70,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
               $username = $_SESSION['username'];
               if (isset($_SESSION['username'])) 
               {
-                echo '<li> <a href="#"> ' + $username + ' </a></li>';
+                echo '<li> <a href="#"> ' . $username . ' </a></li>';
               }
               else
               {
@@ -88,10 +91,10 @@ $_SESSION['LAST_ACTIVITY'] = $time;
         </ul>
       </nav>
       <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-        <ul class="mobile-menu">
+        <div id="bar1"></div>
+        <div id="bar2"></div>
+        <div id="bar3"></div>
+        <ul id="mobile-menu">
           <li><a href="/home">Top Filmes</a></li>
           <li><a href="/products">Top Seris</a></li>
 
