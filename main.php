@@ -130,7 +130,31 @@ $_SESSION['LAST_ACTIVITY'] = $time;
 
             </form>
 
+            <?php
+            error_reporting(1);
+            $result = mysqli_query($conn, "SELECT * FROM filmes");
+            echo '<div class="wrapper">
+                        <div class="cards">';
+            while ($row = mysqli_fetch_array($result)) {
+                echo '
+    <figure class="card">
+   
+        
+        <img src="' . $row['imgpath'] . '" />
 
+        <figcaption>
+        <form action="/cactus-soup/movies/movies.php" method="POST">
+        <input class="button" type="submit" name="submit" value="' . $row['nome'] . '">
+        </form>
+        </figcaption>
+        
+    </figure>';
+            }
+            echo '
+                        </div>
+                        </div>';
+            mysqli_close($con);
+            ?>
             <?php
             // verificar se o input tem algum valor
             if (isset($_GET['k']) && $_GET['k'] != '') {
@@ -188,7 +212,6 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                 } else {
                     echo "No results found";
                 }
-                echo '</table>';
             }
 
 
