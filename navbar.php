@@ -68,13 +68,16 @@ $_SESSION['LAST_ACTIVITY'] = $time;
           <li><a href="/products">Top Seris</a></li>
            
             <?php 
+              $id_user = $_SESSION['id'];
               $username = $_SESSION['username'];
               if (isset($_SESSION['username'])) 
               {
+                echo $id_user;
+                var_dump($id_user);
                 echo '<li class=""><div class="dropdown">
                 <button class="dropbtn"><a href="#"> ' . $username . ' </a></button>
                 <div class="dropdown-content">
-                  <a href="#">Perfil</a>
+                  <a href="profile_page.php?id=';echo $id_user; echo '">Perfil</a>
                   <a href="#">Opcoes</a>
                   <a href="logout.php">Logout</a>
                 </div>
@@ -83,7 +86,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
               }
               else
               {
-                echo'<li id="login"> <a href="../cactus-soup/login_register/login.php" >Login</a> </li>';
+                echo'<li id="login"> <a href="/cactus-soup/login_register/login.php" >Login</a> </li>';
               }
             ?>
 

@@ -572,6 +572,8 @@ h2:after {
     transform: translateY(100%);
     transition: 0.3s;
     display: inline-block;
+    border: #000;
+    
 }
 
 .cards .card:after,

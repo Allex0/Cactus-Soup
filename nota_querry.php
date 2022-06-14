@@ -2,7 +2,8 @@
 session_start();
 include 'login_register/config.php';
 $id = $_GET['id'];
-
+$id_user = $_SESSION['id'];
+echo $id_user;
 
 if(isset($_POST['submit'])){
     $nota = $_POST['nota'];
