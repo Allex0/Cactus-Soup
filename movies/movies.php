@@ -9,6 +9,8 @@ if (isset($_POST['submit'])) {
   $title = $_POST['submit'];
   $im = "SELECT * FROM filmes WHERE nome = '$title'";
   $records = mysqli_query($conn,$im);
+  $id = $_GET['id'];  
+
 
   echo '<head>
     <meta charset="UTF-8">
@@ -25,45 +27,47 @@ if (isset($_POST['submit'])) {
   ';
   include '../navbar.php' ;  
   echo '</head>';
+  
  
 
+  
+//$media_array = array();
 
-
-
-
-
-  $media = "SELECT * from filme_user";
-  $media_array = array();
+  $media = "SELECT `id_filme`, FORMAT(AVG(`nota`), 1) as avg FROM `filme_user` WHERE id_filme='$id' GROUP BY `id_filme`";
   $records_media = mysqli_query($conn, $media);
-  while($media_result = mysqli_fetch_assoc($records_media))
-  {
-    $media_array[] = $media_result['nota'];
+  //while($media_result = mysqli_fetch_assoc($records_media))
+ // { 
+    
+    
+    //$media_array[] = $media_result['nota'];
     //echo $media_array;
     // Create sorted array
-    $numbers = $media_array;
+    //$numbers = $media_array;
 
     // Get array length
-    $length = count($numbers);
+    //$length = count($numbers);
 
     // Divide length by 2
-    $second_half_length = $length / 2;
+    //$second_half_length = $length / 2;
 
     // Subtract 1 from $second_half_length
-    $first_half_length = $second_half_length - 1;
+    //$first_half_length = $second_half_length - 1;
 
     // Get index values
-    $first_half = $numbers[$first_half_length];
-    $second_half = $numbers[$second_half_length];
+    //$first_half = $numbers[$first_half_length];
+    //$second_half = $numbers[$second_half_length];
 
     // Get average of these values
-    $median = ($first_half + $second_half) / 2;
+    //$median = ($first_half + $second_half) / 2;
 
     // Output median
     //echo $median;
-  }
+  //}
 
   while($result = mysqli_fetch_assoc($records)){
     $description = $result['descricao'];
+    $id = $result['id'];
+
     //$person = $_SESSION['id'];
     //$movieid = $result['mid'];
     $year = $result['ano'];
@@ -73,7 +77,7 @@ if (isset($_POST['submit'])) {
     //$newsql = "UPDATE movies SET viewers = '$newcount' WHERE name='$mname' ";
     //$nsql = "UPDATE user1 SET mid = '$movieid'";
   echo '<body class="">
-
+    
     
 
   <div class="">
@@ -96,7 +100,7 @@ if (isset($_POST['submit'])) {
               <div class="percentage-circle">
                 <div class="percentage-circle-stroke">
                   <div class="percent">
-                    <span style="font-size: 15px">'. $median.'</span>
+                    <span style="font-size: 15px">';while($media_result = mysqli_fetch_assoc($records_media)){echo $media_result['avg']; }echo'</span>
                   </div>
                 </div>
               </div>
@@ -107,20 +111,21 @@ if (isset($_POST['submit'])) {
               </li>
               <li class="rate-it">
                 <label><p >Avalia:</p></label>
-                <form action="/action_page.php">
-                <select id="cars" name="cars">
-                  <option value="volvo">10</option>
-                  <option value="saab">9</option>
-                  <option value="fiat">8</option>
-                  <option value="audi">7</option>
-                  <option value="audi">6</option>
-                  <option value="audi">5</option>
-                  <option value="audi">4</option>
-                  <option value="audi">3</option>
-                  <option value="audi">2</option>
-                  <option value="audi">1</option>
+                <form action="../nota_querry.php?id=';echo  $id,'" method="POST">
+                <select id="nota" name="nota">
+                  <option value="10">10</option>
+                  <option value="9">9</option>
+                  <option value="8">8</option>
+                  <option value="7">7</option>
+                  <option value="6">6</option>
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3">3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
                 </select>
-                <input type="submit">
+                <input name="submit" type="submit">
+                
               </form>
 
               </li>

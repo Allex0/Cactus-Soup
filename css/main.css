@@ -536,7 +536,7 @@ h2:after {
 
 .cards,
 .news {
-    flex-flow: row wrap;
+    flex-flow: row;
 }
 
 .cards .card,
@@ -556,6 +556,7 @@ h2:after {
 .news .card img {
     width: 100%;
     min-height: 100%;
+    display: inline;
 }
 
 .cards .card figcaption,

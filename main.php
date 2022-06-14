@@ -132,28 +132,35 @@ $_SESSION['LAST_ACTIVITY'] = $time;
 
             <?php
             error_reporting(1);
-            $result = mysqli_query($conn, "SELECT * FROM filmes");
+
+            if ($_GET == null){
+                $result = mysqli_query($conn, "SELECT * FROM filmes LIMIT 10");
             echo '<div class="wrapper">
-                        <div class="cards">';
+            <div class="cards">';
             while ($row = mysqli_fetch_array($result)) {
                 echo '
-    <figure class="card">
-   
-        
-        <img src="' . $row['imgpath'] . '" />
+                <figure class="card">
+            
+                    
+                    <img src="' . $row['imgpath'] . '" />
 
-        <figcaption>
-        <form action="/cactus-soup/movies/movies.php" method="POST">
-        <input class="button" type="submit" name="submit" value="' . $row['nome'] . '">
-        </form>
-        </figcaption>
-        
-    </figure>';
+                    <figcaption>
+                    <form action="/cactus-soup/movies/movies.php?id=';echo $row['id']; echo '" method="POST">
+                                <input class="button" type="submit" name="submit" value="' . $row['nome'] . '">
+                                <input type="hidden" name="id" value="';echo $row['id']; echo'">
+                    </form>
+                    </figcaption>
+                    
+                </figure>
+                ';
             }
             echo '
+                        
                         </div>
                         </div>';
             mysqli_close($con);
+            }
+            
             ?>
             <?php
             // verificar se o input tem algum valor
@@ -189,7 +196,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
 
                     // mostrar os resultados
                     echo '<div class="wrapper">
-                        <div class="cards">';
+                    <div class="cards">';
                     while ($row = mysqli_fetch_assoc($query)) {
                         $local_imagem = "/cactus-soup/movies/images/" . $row['nome'] . " " . $row['ano'];
                         echo '
@@ -199,16 +206,19 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                                 <img src="' . $row['imgpath'] . '" />
 
                                 <figcaption>
-                                <form action="/cactus-soup/movies/movies.php" method="POST">
+                                <form action="/cactus-soup/movies/movies.php?id=';echo $row['id']; echo '" method="POST">
                                 <input class="button" type="submit" name="submit" value="' . $row['nome'] . '">
+                                <input type="hidden" name="id" value="';echo $row['id']; echo'">
                                 </form>
                                 </figcaption>
                                 
-                            </figure>';
+                            </figure>
+                            
+                        ';
                     }
                     echo '
-                        </div>
-                        </div>';
+                    </div>
+                    </div>';
                 } else {
                     echo "No results found";
                 }

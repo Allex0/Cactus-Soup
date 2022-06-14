@@ -54,6 +54,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/dropdown.css">
     <style>
       
     </style>
@@ -70,7 +71,15 @@ $_SESSION['LAST_ACTIVITY'] = $time;
               $username = $_SESSION['username'];
               if (isset($_SESSION['username'])) 
               {
-                echo '<li> <a href="#"> ' . $username . ' </a></li>';
+                echo '<li class=""><div class="dropdown">
+                <button class="dropbtn"><a href="#"> ' . $username . ' </a></button>
+                <div class="dropdown-content">
+                  <a href="#">Perfil</a>
+                  <a href="#">Opcoes</a>
+                  <a href="logout.php">Logout</a>
+                </div>
+                </div>';
+                
               }
               else
               {

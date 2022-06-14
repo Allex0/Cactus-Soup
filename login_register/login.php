@@ -23,6 +23,12 @@ if (isset($_POST['submit'])) {
 	} else {
 		echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
 	}
+	$data = mysqli_fetch_all($result,MYSQLI_ASSOC);
+	if ($result->num_rows == 1) {
+		$_SESSION['id'] = $data[0]['id'];
+		$_SESSION['user'] = $data[0]['username'];
+		$_SESSION['role'] = $data[0]['role'];
+	}
 }
 
 ?>
