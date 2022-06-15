@@ -63,7 +63,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
     <header id="all">
       <div id="brand"><a href="/cactus-soup/main.php">Cactus Soup</a></div>
       <nav>
-        <ul id="float-left">
+        <ul id="float-left" class="ul">
           <li><a href="/home">Top Filmes</a></li>
           <li><a href="/products">Top Seris</a></li>
            
@@ -72,8 +72,6 @@ $_SESSION['LAST_ACTIVITY'] = $time;
               $username = $_SESSION['username'];
               if (isset($_SESSION['username'])) 
               {
-                echo $id_user;
-                var_dump($id_user);
                 echo '<li class=""><div class="dropdown">
                 <button class="dropbtn"><a href="#"> ' . $username . ' </a></button>
                 <div class="dropdown-content">

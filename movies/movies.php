@@ -11,19 +11,20 @@ if (isset($_POST['submit'])) {
   $records = mysqli_query($conn,$im);
   $id = $_GET['id'];  
 
+  header('Content-Type: text/html; charset=utf-8');
 
   echo '<head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <link rel="stylesheet" href="/cactus-soup/movies/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/cactus-soup/css/navbar.css">
+    <link rel="stylesheet" href="/cactus-soup/css/dropdown.css">
+    <link rel="stylesheet" href="/cactus-soup/footer.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
           integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <title>'. $title .'</title>
 
-    <style> 
-    </style>
   ';
   include '../navbar.php' ;  
   echo '</head>';
@@ -124,7 +125,7 @@ if (isset($_POST['submit'])) {
                   <option value="2">2</option>
                   <option value="1">1</option>
                 </select>
-                <input name="submit" type="submit">
+                <input value="Avaliar" name="submit" type="submit">
                 
               </form>
 
@@ -158,7 +159,9 @@ if (isset($_POST['submit'])) {
 </div>
 </div>
 </section>
-</body>';
+</body>
+</html>';
+include '../footer.php';
 
 }
 }

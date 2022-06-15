@@ -10,26 +10,6 @@ if (isset($_SESSION['username'])) {
     header("Location: ../main.php");
 }
 
-if (isset($_POST['submit'])) {
-	$email = $_POST['email'];
-	$password = md5($_POST['password']);
-
-	$sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-	$result = mysqli_query($conn, $sql);
-	if ($result->num_rows > 0) {
-		$row = mysqli_fetch_assoc($result);
-		$_SESSION['username'] = $row['username'];
-		header("Location: ../main.php");
-	} else {
-		echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
-	}
-	$data = mysqli_fetch_all($result,MYSQLI_ASSOC);
-	if ($result->num_rows == 1) {
-		$_SESSION['id'] = $data[0]['id'];
-		$_SESSION['user'] = $data[0]['username'];
-		$_SESSION['role'] = $data[0]['role'];
-	}
-}
 
 ?>
 
@@ -47,7 +27,7 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
 	<div class="container">
-		<form action="" method="POST" class="login-email">
+		<form action="login_verify.php" method="POST" class="login-email">
 			<p class="login-text">Login</p>
 			<div class="input-group">
 				<input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
@@ -56,7 +36,7 @@ if (isset($_POST['submit'])) {
 				<input type="password" placeholder="Palavra-passe" name="password" value="<?php echo $_POST['password']; ?>" required>
 			</div>
 			<div class="input-group">
-				<button name="submit" class="btn">Login</button>
+				<button type="submit" name="submit" class="btn">Login</button>
 			</div>
 			<p class="login-register-text">Não tem conta? <a href="register.php">Registar aqui</a>.</p>
 		</form>

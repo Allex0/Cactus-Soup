@@ -57,6 +57,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css\main.css">
     <link rel="stylesheet" type="text/css" href="css\search_bar.scss">
+    <link rel="stylesheet" type="text/css" href="css/cards.css">
     <title>Cactus Soup</title>
     <?php include 'navbar.php' ?>
 </head>
@@ -113,8 +114,6 @@ $_SESSION['LAST_ACTIVITY'] = $time;
     ?>
 
 
-    <div class="container">
-        <div class="">
             <form class="" action="" method="GET" name="">
 
                 <table>
@@ -129,35 +128,41 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                 </table>
 
             </form>
-
+         
             <?php
             error_reporting(1);
 
             if ($_GET == null){
                 $result = mysqli_query($conn, "SELECT * FROM filmes LIMIT 10");
-            echo '<div class="wrapper">
-            <div class="cards">';
+            
+                echo'
+                <div class="wrapper">
+
+	
+
+	<div class="cards">';
             while ($row = mysqli_fetch_array($result)) {
                 echo '
-                <figure class="card">
-            
-                    
-                    <img src="' . $row['imgpath'] . '" />
+                
 
-                    <figcaption>
-                    <form action="/cactus-soup/movies/movies.php?id=';echo $row['id']; echo '" method="POST">
-                                <input class="button" type="submit" name="submit" value="' . $row['nome'] . '">
-                                <input type="hidden" name="id" value="';echo $row['id']; echo'">
-                    </form>
-                    </figcaption>
-                    
-                </figure>
+		<figure class="card">
+
+			<img src="' . $row['imgpath'] . '" />
+
+			<figcaption><form action="/cactus-soup/movies/movies.php?id=';echo $row['id']; echo '" method="POST">
+            <input class="button" type="submit" name="submit" value="' . $row['nome'] . '">
+            <input type="hidden" name="id" value="';echo $row['id']; echo'">
+            </form></figcaption>
+
+		</figure>
+                       
                 ';
             }
             echo '
-                        
-                        </div>
-                        </div>';
+            </div>
+
+            </div>       
+                        ';
             mysqli_close($con);
             }
             
@@ -228,9 +233,6 @@ $_SESSION['LAST_ACTIVITY'] = $time;
 
             ?>
 
-        </div>
-
-    </div>
 
 
 
