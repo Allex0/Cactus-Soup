@@ -25,10 +25,10 @@ session_start();
             <img src="https://imdezcode.files.wordpress.com/2020/02/imdezcode-logo.png" alt="" width="100" height="100">
 
             <div class="name">
-                Alexandru Arseni
+                <?php echo $_SESSION['username']?>
             </div>
             <div class="job">
-                Web Developer
+                <?php echo $_SESSION['role']?>
             </div>
         </div>
 
