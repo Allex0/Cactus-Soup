@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/cactus-soup/css/navbar.css">
     <link rel="stylesheet" href="/cactus-soup/css/dropdown.css">
-    <link rel="stylesheet" href="/cactus-soup/footer.css">
+    <link rel="stylesheet" href="/cactus-soup/footer2.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
           integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
@@ -106,7 +106,9 @@ if (isset($_POST['submit'])) {
                 </div>
               </div>
             </div>
-            <ul class="every">
+            '; if(isset($_SESSION['username'])){
+              echo '<ul class="">
+            
               <li class="add-to-list">
                 <p >Adiciona na lista:</p>
               </li>
@@ -130,27 +132,18 @@ if (isset($_POST['submit'])) {
               </form>
 
               </li>
-            </ul>
+            </ul>';
+            }; echo'
+            
           </div>
           <div class="about">
             <div class="overview">
               <h3 >Informação</h3>
               <p >' . $description . ' </p></div>
             <div class="featured-crew">
-              <h3 >Featured Crew</h3>
+              <h3 ></h3>
               <ul>
-                <li>
-                  <p>
-                    <a href="#">John Waine</a>
-                  <h1 >Director</h1>
-                </p>
-              </li>
-            <li>
-              <p>
-                <a href="#">John Waine</a>
-              <h1 >Director</h1>
-            </p>
-          </li>
+                
           
         </ul>
     </div>

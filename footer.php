@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="footer-basic">
+    <div id="footer-basic">
         <footer>
             <ul class="list-inline">
                 <li class="list-inline-item"><a href="#">Pagina principal</a></li>
