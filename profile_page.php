@@ -37,23 +37,23 @@ session_start();
 
         <div class="sidenav-url">
             <div class="url">
-                <a href="#profile" class="active">Todos Filmes</a>
+                <a href="#profile" class="active">Todos filmes</a>
                 <hr align="center">
             </div>
             <div class="url">
-                <a href="#settings">Vizionados</a>
+                <a href="#settings">Vistos</a>
                 <hr align="center">
             </div>
             <div class="url">
-                <a href="#settings">Em Pausa</a>
+                <a href="#settings">Em pausa</a>
                 <hr align="center">
             </div>
             <div class="url">
-                <a href="#settings">Desistidos</a>
+                <a href="#settings">Cancelados</a>
                 <hr align="center">
             </div>
             <div class="url">
-                <a href="#settings">Para vizionar</a>
+                <a href="#settings">Ver no futuro</a>
                 <hr align="center">
             </div>
             <div class="url">
