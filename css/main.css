@@ -46,8 +46,9 @@ body {
 
 /* GRID */
 .container {
+  top: 0;
   height: 60vh;
-  width: 80vw;
+  width: 70vw;
   margin: 2rem auto;
   display: grid;
   grid-template-areas: "object object object"
@@ -62,15 +63,12 @@ body {
 }
 
 .box {
-  margin-top: 0;
-  height: 60vh;
+  top: 0;
   grid-area: main;
   background-color: #52525B;
   border-radius: 25px;
   display: grid;
   grid-gap: 10px;
-  grid-row: row 2;
-  grid-template-columns: 1fr 1fr;
 }
 
 .box-nested-principal{
@@ -90,6 +88,9 @@ grid-row: 1;
 }
 
 /* Search form*/
+.form-search{
+  margin-left: 13%;
+}
 .search-form{
   margin-left: 25px;
   margin-top: 25px;
@@ -348,7 +349,7 @@ body{
 /* Main */
 .main {
   margin-top: 2%;
-  margin-left: 15%;
+  margin-left: 5%;
   font-size: 28px;
   padding: 0 10px;
 }

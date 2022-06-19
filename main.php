@@ -95,14 +95,14 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                 </div>
                 <div class="box-nested-feature-2">
                     <div class="box-feature">
-                        <img src="track.png" height="100" width="100">
+                        <img src="organize.png" height="100" width="100">
                         <div class="box-feature-text-principal">
                             <p>
-                                Descobre
+                                Organiza
                             </p>
                             <div class="box-feature-text-secundario">
-                                <p><p>Quer encontrar un bom <br>filme para ver esta tarde? <br>
-                                    Procura no nosso site!</p>
+                                <p><p>Cria uma lista <br>com filmes/seris <br>
+                                    e organiza como quer!</p>
                             </div>
                         </div>
                     </div>
@@ -114,7 +114,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
     ?>
 
 
-            <form class="" action="" method="GET" name="">
+            <form class="form-search" action="" method="GET" name="">
 
                 <table>
                     <tr>

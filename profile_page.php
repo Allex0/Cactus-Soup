@@ -37,11 +37,11 @@ session_start();
 
         <div class="sidenav-url">
             <div class="url">
-                <a href="#profile" class="active">Todos filmes</a>
+                <a href="#todosfilmes" class="">Todos filmes</a>
                 <hr align="center">
             </div>
             <div class="url">
-                <a href="#settings">Vistos</a>
+                <a href="#vistos" class="active">Vistos</a>
                 <hr align="center">
             </div>
             <div class="url">
@@ -62,16 +62,22 @@ session_start();
             </div>
         </div>
     </div>
+
     <!-- End -->
 
     <!-- Main -->
-    <div class="main">
-        <?php
-        $result = mysqli_query($conn, "SELECT * FROM filmes LIMIT 10");
+    <div id="" class="main">
+        <div id="todosfilmes">
+        
+    
+    </div>
+    <div id="vistos" class="">
+    <?php
+        $result = mysqli_query($conn, "SELECT * FROM filmes LIMIT 1");
 
         echo '
         <div class="wrapper">
-
+    
 
 
 <div class="cards">';
@@ -103,6 +109,7 @@ session_start();
                 ';
         mysqli_close($con);
         ?>
+    </div>
     </div>
     <!-- End -->
 </body>
