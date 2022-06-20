@@ -8,11 +8,11 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
+    <title>Pagina de Perfil</title>
     <link rel="stylesheet" type="text/css" href="css/cards.css">
     <!-- Custom Css -->
     <link rel="stylesheet" href="css/main.css">
-
+    <link rel="stylesheet" href="css/profile_page_form.css">
     <!-- FontAwesome 5 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 
@@ -41,7 +41,7 @@ session_start();
                 <hr align="center">
             </div>
             <div class="url">
-                <a href="#vistos" class="active">Vistos</a>
+                <a href="#vistos" class="">Vistos</a>
                 <hr align="center">
             </div>
             <div class="url">
@@ -56,8 +56,8 @@ session_start();
                 <a href="#settings">Ver no futuro</a>
                 <hr align="center">
             </div>
-            <div class="url">
-                <a href="#settings">Opcoes</a>
+            <div class="url" class="">
+                <a href="#opcoes" class="active">Opcoes</a>
                 <hr align="center">
             </div>
         </div>
@@ -72,8 +72,30 @@ session_start();
     
     </div>
     <div id="vistos" class="">
+    <div class="container-profile">
+            <div class="box-profile">
+                <div class="box-nested-principal">    
+                    <div class="box-text-principal">
+                        <p>Opções</p>
+                    </div>
+                </div>
+                <div class="profile-page-form">
+                    <form action="">
+                        <label for="fname">Mudar nome para:</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Indica o seu novo nome!">
+                        <input class="profile-page-form-submit" type="submit" value="Submeter"><br>
+                        <label for="lname">Mudar palavra-passe para:</label>
+                        <input type="text" id="lname" name="lastname" placeholder="Indica a sua nova palavra-passe!">
+                        <input class="profile-page-form-submit" type="submit" value="Submeter">
+                    </form>
+                </div>
+                  
+            </div>        
+        </div>  
+
+
     <?php
-        $result = mysqli_query($conn, "SELECT * FROM filmes LIMIT 1");
+      /*  $result = mysqli_query($conn, "SELECT * FROM filmes LIMIT 1");
 
         echo '
         <div class="wrapper">
@@ -107,7 +129,7 @@ session_start();
 
     </div>       
                 ';
-        mysqli_close($con);
+        mysqli_close($con);*/
         ?>
     </div>
     </div>

@@ -110,7 +110,7 @@ if (isset($_POST['submit'])) {
               echo '<ul class="">
             
               <li class="add-to-list">
-                <p >Adiciona na lista:</p>
+                <p >Adiciona na lista</p>
               </li>
               <li class="rate-it">
                 <label><p >Avalia:</p></label>
