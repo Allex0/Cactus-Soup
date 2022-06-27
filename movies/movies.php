@@ -1,19 +1,20 @@
 <?php
 
 use LDAP\Result;
+include '../nota_querry.php';
 
-session_start();
 if (isset($_POST['submit'])) {
   include '../login_register/config.php';
 
   $title = $_POST['submit'];
   $im = "SELECT * FROM filmes WHERE nome = '$title'";
   $records = mysqli_query($conn,$im);
-  $id = $_GET['id'];  
+  
 
   header('Content-Type: text/html; charset=utf-8');
 
   echo '<head>
+    <script src="index.js"></script>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/cactus-soup/movies/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,34 +37,6 @@ if (isset($_POST['submit'])) {
 
   $media = "SELECT `id_filme`, FORMAT(AVG(`nota`), 1) as avg FROM `filme_user` WHERE id_filme='$id' GROUP BY `id_filme`";
   $records_media = mysqli_query($conn, $media);
-  //while($media_result = mysqli_fetch_assoc($records_media))
- // { 
-    
-    
-    //$media_array[] = $media_result['nota'];
-    //echo $media_array;
-    // Create sorted array
-    //$numbers = $media_array;
-
-    // Get array length
-    //$length = count($numbers);
-
-    // Divide length by 2
-    //$second_half_length = $length / 2;
-
-    // Subtract 1 from $second_half_length
-    //$first_half_length = $second_half_length - 1;
-
-    // Get index values
-    //$first_half = $numbers[$first_half_length];
-    //$second_half = $numbers[$second_half_length];
-
-    // Get average of these values
-    //$median = ($first_half + $second_half) / 2;
-
-    // Output median
-    //echo $median;
-  //}
 
   while($result = mysqli_fetch_assoc($records)){
     $description = $result['descricao'];
@@ -107,14 +80,16 @@ if (isset($_POST['submit'])) {
               </div>
             </div>
             '; if(isset($_SESSION['username'])){
+              
               echo '<ul class="">
             
               <li class="add-to-list">
-                <p >Adiciona na lista</p>
+                <p>Adiciona na lista</p>
               </li>
               <li class="rate-it">
-                <label><p >Avalia:</p></label>
-                <form action="../nota_querry.php?id=';echo  $id,'" method="POST">
+                <label><p>'. $id.'Avalia:</p></label>
+                <form action="../nota_querry.php" method="POST">
+                <input type="hidden" name="id" value="';echo $id; echo'">
                 <select id="nota" name="nota">
                   <option value="10">10</option>
                   <option value="9">9</option>
@@ -127,7 +102,7 @@ if (isset($_POST['submit'])) {
                   <option value="2">2</option>
                   <option value="1">1</option>
                 </select>
-                <input value="Avaliar" name="submit" type="submit">
+                <input value="Avaliar" name="submit_nota" type="submit">
                 
               </form>
 

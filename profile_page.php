@@ -1,6 +1,11 @@
 <?php
 session_start();
+if (isset($_SESSION['username'])){
 
+}
+else {
+    header('Location: main.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,10 +16,15 @@ session_start();
     <title>Pagina de Perfil</title>
     <link rel="stylesheet" type="text/css" href="css/cards.css">
     <!-- Custom Css -->
+    <script src="index.js"></script>
+    <script src="jquery/jquery.min.js"></script>
+
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/profile_page_form.css">
     <!-- FontAwesome 5 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+    
 
 </head>
 
@@ -37,27 +47,31 @@ session_start();
 
         <div class="sidenav-url">
             <div class="url">
-                <a href="#todosfilmes" class="">Todos filmes</a>
+                <a class="active" id="todos_filmes" href="#todosfilmes" onclick="toggleActive(this); todos_filmes()">Todos filmes</a>
                 <hr align="center">
             </div>
             <div class="url">
-                <a href="#vistos" class="">Vistos</a>
+                <a id="a_ver" href="#vistos" onclick="toggleActive(this); a_ver()">A ver</a>
                 <hr align="center">
             </div>
             <div class="url">
-                <a href="#settings">Em pausa</a>
+                <a id="vistos" href="#vistos" onclick="toggleActive(this); vistos()">Vistos</a>
+                <hr align="center">
+            </div>
+            <div class="url" >
+                <a id="em_pausa" href="#settings"onclick="toggleActive(this); em_pausa()">Em pausa</a>
                 <hr align="center">
             </div>
             <div class="url">
-                <a href="#settings">Cancelados</a>
+                <a id="cancelados" href="#settings" onclick="toggleActive(this); cancelados()">Cancelados</a>
                 <hr align="center">
             </div>
             <div class="url">
-                <a href="#settings">Ver no futuro</a>
+                <a id="ver_no_futuro" href="#settings" onclick="toggleActive(this); ver_no_futuro()">Ver no futuro</a>
                 <hr align="center">
             </div>
             <div class="url" class="">
-                <a href="#opcoes" class="active">Opcoes</a>
+                <a href="#opcoes" onclick="toggleActive(this); opcoes()">Opcoes</a>
                 <hr align="center">
             </div>
         </div>
@@ -66,13 +80,12 @@ session_start();
     <!-- End -->
 
     <!-- Main -->
-    <div id="" class="main">
-        <div id="todosfilmes">
+    <div id="main" class="main">
         
     
     </div>
-    <div id="vistos" class="">
-    <div class="container-profile">
+    <div class="">
+    <!-- <div class="container-profile">
             <div class="box-profile">
                 <div class="box-nested-principal">    
                     <div class="box-text-principal">
@@ -90,47 +103,11 @@ session_start();
                     </form>
                 </div>
                   
-            </div>        
+            </div>     -->   
         </div>  
 
 
-    <?php
-      /*  $result = mysqli_query($conn, "SELECT * FROM filmes LIMIT 1");
-
-        echo '
-        <div class="wrapper">
     
-
-
-<div class="cards">';
-        while ($row = mysqli_fetch_array($result)) {
-            echo '
-        
-
-<figure class="card">
-
-    <img src="' . $row['imgpath'] . '" />
-
-    <figcaption><form action="/cactus-soup/movies/movies.php?id=';
-            echo $row['id'];
-            echo '" method="POST">
-    <input class="button" type="submit" name="submit" value="' . $row['nome'] . '">
-    <input type="hidden" name="id" value="';
-            echo $row['id'];
-            echo '">
-    </form></figcaption>
-
-</figure>
-               
-        ';
-        }
-        echo '
-    </div>
-
-    </div>       
-                ';
-        mysqli_close($con);*/
-        ?>
     </div>
     </div>
     <!-- End -->

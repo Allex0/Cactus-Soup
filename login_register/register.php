@@ -14,12 +14,14 @@ if(isset($_POST['submit'])) {
     if ($password == $cpassword) {
         $sql = "SELECT * FROM users WHERE email='$email'";
         $result = mysqli_query($conn, $sql);
+        
         if (!$result -> num_rows > 0) {
             
-            $sql = "INSERT INTO users (username, email, password) 
-                VALUES ('$username', '$email', '$password')";
+            $sql = "INSERT INTO users (username, email, password, role) 
+                VALUES ('$username', '$email', '$password', 'utilizador')";
             $result = mysqli_query($conn, $sql);
-
+            var_dump($result);
+            echo $result;
             if($result)
             {
                 $username = "";
@@ -33,7 +35,7 @@ if(isset($_POST['submit'])) {
             }
             else 
             {
-                echo "<script>alert('Ops, something went wrong')</script>";
+                echo '<script>alert("Ops, something went wrong")</script>';
             }
             }
         else
