@@ -78,7 +78,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                 <button class="dropbtn"><a href="#"> ' . $username . ' </a></button>
                 <div class="dropdown-content">
                   <a href="'.profile_page.'?id=';echo $id_user; echo '">Perfil</a>
-                  <a href="logout.php">Logout</a>
+                  <a href="'.logout.'">Logout</a>
                 </div>
                 </div>';
                 

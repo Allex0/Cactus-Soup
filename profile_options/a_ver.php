@@ -1,9 +1,8 @@
-
-
-
 <?php
+session_start();
+$id_user = $_SESSION['id'];
 include '../login_register/config.php';
-        $result = mysqli_query($conn, "SELECT * FROM filmes LIMIT 5");
+        $result = mysqli_query($conn, "SELECT * FROM filmes f, filme_user fu WHERE f.id = fu.id_filme AND id_user = '$id_user' AND status = 'a ver'");
 
         echo '
         <div class="wrapper">

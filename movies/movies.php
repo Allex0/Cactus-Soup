@@ -1,18 +1,55 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 use LDAP\Result;
 //include '../nota_querry.php';
-
+include '../login_register/config.php';
 session_start();
 
-if (isset($_POST['id'])){
-  $id = $_POST['id']; 
+if (isset($_GET['id'])){
+  $id = $_GET['id']; 
 }
 
-include '../login_register/config.php';
+
+
+$id_user = $_SESSION['id'];
+
+  
+$status_vazio = null;
+
+if(isset($_POST['submit_status'])){
+
+
+    $status = $_POST['status'];
+
+    $query_nota = "SELECT `status` FROM `filme_user` WHERE id_filme='$id' AND id_user = '$id_user'";
+      $records_nota = mysqli_query($conn, $query_nota);
+      while($result = mysqli_fetch_assoc($records_nota)){
+        $status_vazio = $result['status'];
+        
+      ;}
+
+      
+    if(!empty($status)){
+        $id_user = $_SESSION['id'];
+        $query = "UPDATE filme_user set status = '$status' where id_filme = '$id' AND id_user = '$id_user'";
+        $result = $conn->query($query);
+        if($result){
+
+         echo "<script language='javascript'>alert('Dados atualizados com sucesso');window.location.reload;</script>";
+
+
+        }  
+        else{
+          echo "<script language='javascript'>alert('Erro na update');window.location.reload;</script>";
+        }
+      }
+
+
+      
+      
+    }
+
+
 
 $id_user = $_SESSION['id'];
 
@@ -35,14 +72,12 @@ if(isset($_POST['submit_nota'])){
       {
         $id_user = $_SESSION['id'];
         $query = "INSERT INTO filme_user (nota, id_filme, id_user) VALUES ('$nota', '$id', '$id_user')";
-        echo $query;
         $result = $conn->query($query);
         if($result){
-          echo "Successssssssssssssssssssssso";
-          header('Location: /cactus-soup/main.php ');
+          echo "<script language='javascript'>alert('Dados guardados com sucesso');window.location.reload;</script>";
         }  
         else{
-          echo "Errrro";
+          echo "<script language='javascript'>alert('Erro');window.location.reload;</script>";
         }
       }
     if(!empty($nota)){
@@ -51,32 +86,42 @@ if(isset($_POST['submit_nota'])){
         $result = $conn->query($query);
         if($result){
 
-          $moviepath = "movies/movies.php?id=$id";
-         echo "<script language='javascript'>alert('Dados guardados com sucesso');window.location.reload;</script>";
+         echo "<script language='javascript'>alert('Dados atualizados com sucesso');window.location.reload;</script>";
 
 
         }  
         else{
-          echo "Erro";
+          echo "<script language='javascript'>alert('Erro');window.location.reload;</script>";
         }
       }
 
-
-      
-      
     }
 
-if (isset($_POST['submit'])) {
+// if (isset($_GET['filme'])) {
   include '../login_register/config.php';
 
-  $title = $_POST['submit'];
-  $im = "SELECT * FROM filmes WHERE nome = '$title'";
+  // $title = $_GET['filme'];
+  $idFilme = $_GET["id"];
+  $im = "SELECT * FROM filmes WHERE id = '$idFilme'";
   $records = mysqli_query($conn,$im);
   
 
+//$media_array = array();
+
+  $media = "SELECT `id_filme`, FORMAT(AVG(`nota`), 1) as avg FROM `filme_user` WHERE id_filme='$id' GROUP BY `id_filme`";
+  $records_media = mysqli_query($conn, $media);
+
+  while($result = mysqli_fetch_assoc($records)){
+    $description = $result['descricao'];
+    $id = $result['id'];
+    $title = $result['nome'];
+    //$person = $_SESSION['id'];
+    //$movieid = $result['mid'];
+    $year = $result['ano'];
+    $imgpath = '../'. $result['imgpath'];
+    
   header('Content-Type: text/html; charset=utf-8');
 
-  echo $title;
 
   echo '<head>
     <script src="index.js"></script>
@@ -94,27 +139,6 @@ if (isset($_POST['submit'])) {
   ';
   include '../navbar.php' ;  
   echo '</head>';
-  
- 
-
-  
-//$media_array = array();
-
-  $media = "SELECT `id_filme`, FORMAT(AVG(`nota`), 1) as avg FROM `filme_user` WHERE id_filme='$id' GROUP BY `id_filme`";
-  $records_media = mysqli_query($conn, $media);
-
-  while($result = mysqli_fetch_assoc($records)){
-    $description = $result['descricao'];
-    $id = $result['id'];
-
-    //$person = $_SESSION['id'];
-    //$movieid = $result['mid'];
-    $year = $result['ano'];
-    $imgpath = '../'. $result['imgpath'];
-    //$current = $result['viewers'];
-    //$newcount = $current + 1;
-    //$newsql = "UPDATE movies SET viewers = '$newcount' WHERE name='$mname' ";
-    //$nsql = "UPDATE user1 SET mid = '$movieid'";
   echo '<body class="">
     
     
@@ -146,13 +170,28 @@ if (isset($_POST['submit'])) {
             </div>
             '; if(isset($_SESSION['username'])){
               
-              echo '<ul class="">
-            
-              <li class="add-to-list">
-                <p>Adiciona na lista</p>
+              echo '
+              <ul>
+            <li class="rate-it">
+                <label><p >Adiciona na lista:</p></label>
+                <form action="" method="POST">
+                <input type="hidden" name="id" value="';echo $id; echo'">
+                <select id="status" name="status">
+                  <option value="a ver">A ver</option>
+                  <option value="visto">Visto</option>
+                  <option value="em pausa">Em pausa</option>
+                  <option value="cancelado">Cancelado</option>
+                  <option value="ver no futuro">Ver no futuro</option>
+                </select>
+                <input value="Adicionar" name="submit_status" type="submit">
               </li>
+              </ul>
+
+              <ul class="" >
+            
+            
               <li class="rate-it">
-                <label><p>'. $id.'Avalia:</p></label>
+                <label><p>Avalia:</p></label>
                 <form action="" method="POST">
                 <input type="hidden" name="id" value="';echo $id; echo'">
                 <select id="nota" name="nota">
@@ -172,14 +211,17 @@ if (isset($_POST['submit'])) {
               </form>
 
               </li>
-            </ul>';
+            </ul>
+            
+            
+            ';
             }; echo'
             
           </div>
           <div class="about">
             <div class="overview">
               <h3 >Informação</h3>
-              <p >' . $description . ' </p></div>
+              <p >' . utf8_encode($description) . ' </p></div>
             <div class="featured-crew">
               <h3 ></h3>
               <ul>
@@ -197,4 +239,4 @@ if (isset($_POST['submit'])) {
 include '../footer.php';
 
 }
-}
+// }

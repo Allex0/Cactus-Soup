@@ -28,14 +28,12 @@
           {
             $id_user = $_SESSION['id'];
             $query = "INSERT INTO filme_user (nota, id_filme, id_user) VALUES ('$nota', '$id', '$id_user')";
-            echo $query;
             $result = $conn->query($query);
             if($result){
-              echo "Successssssssssssssssssssssso";
               header('Location: /cactus-soup/main.php ');
             }  
             else{
-              echo "Errrro";
+              echo "Erro";
             }
           }
         if(!empty($nota)){

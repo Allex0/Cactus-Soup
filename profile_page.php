@@ -85,25 +85,7 @@ else {
     
     </div>
     <div class="">
-    <!-- <div class="container-profile">
-            <div class="box-profile">
-                <div class="box-nested-principal">    
-                    <div class="box-text-principal">
-                        <p>Opções</p>
-                    </div>
-                </div>
-                <div class="profile-page-form">
-                    <form action="">
-                        <label for="fname">Mudar nome para:</label>
-                        <input type="text" id="fname" name="firstname" placeholder="Indica o seu novo nome!">
-                        <input class="profile-page-form-submit" type="submit" value="Submeter"><br>
-                        <label for="lname">Mudar palavra-passe para:</label>
-                        <input type="text" id="lname" name="lastname" placeholder="Indica a sua nova palavra-passe!">
-                        <input class="profile-page-form-submit" type="submit" value="Submeter">
-                    </form>
-                </div>
-                  
-            </div>     -->   
+    -->   
         </div>  
 
 
