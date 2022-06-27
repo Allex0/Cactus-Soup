@@ -1,7 +1,70 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 use LDAP\Result;
-include '../nota_querry.php';
+//include '../nota_querry.php';
+
+session_start();
+
+if (isset($_POST['id'])){
+  $id = $_POST['id']; 
+}
+
+include '../login_register/config.php';
+
+$id_user = $_SESSION['id'];
+
+  
+$nota_vazio = null;
+
+if(isset($_POST['submit_nota'])){
+
+
+    $nota = $_POST['nota'];
+
+    $query_nota = "SELECT `nota` FROM `filme_user` WHERE id_filme='$id' AND id_user = '$id_user'";
+      $records_nota = mysqli_query($conn, $query_nota);
+      while($result = mysqli_fetch_assoc($records_nota)){
+        $nota_vazio = $result['nota'];
+        
+      ;}
+
+      if($nota_vazio == null)
+      {
+        $id_user = $_SESSION['id'];
+        $query = "INSERT INTO filme_user (nota, id_filme, id_user) VALUES ('$nota', '$id', '$id_user')";
+        echo $query;
+        $result = $conn->query($query);
+        if($result){
+          echo "Successssssssssssssssssssssso";
+          header('Location: /cactus-soup/main.php ');
+        }  
+        else{
+          echo "Errrro";
+        }
+      }
+    if(!empty($nota)){
+        $id_user = $_SESSION['id'];
+        $query = "UPDATE filme_user set nota = '$nota' where id_filme = '$id' AND id_user = '$id_user'";
+        $result = $conn->query($query);
+        if($result){
+
+          $moviepath = "movies/movies.php?id=$id";
+         echo "<script language='javascript'>alert('Dados guardados com sucesso');window.location.reload;</script>";
+
+
+        }  
+        else{
+          echo "Erro";
+        }
+      }
+
+
+      
+      
+    }
 
 if (isset($_POST['submit'])) {
   include '../login_register/config.php';
@@ -12,6 +75,8 @@ if (isset($_POST['submit'])) {
   
 
   header('Content-Type: text/html; charset=utf-8');
+
+  echo $title;
 
   echo '<head>
     <script src="index.js"></script>
@@ -88,7 +153,7 @@ if (isset($_POST['submit'])) {
               </li>
               <li class="rate-it">
                 <label><p>'. $id.'Avalia:</p></label>
-                <form action="../nota_querry.php" method="POST">
+                <form action="" method="POST">
                 <input type="hidden" name="id" value="';echo $id; echo'">
                 <select id="nota" name="nota">
                   <option value="10">10</option>
