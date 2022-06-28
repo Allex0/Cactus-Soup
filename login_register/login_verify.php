@@ -12,8 +12,6 @@ if (isset($_POST['submit'])) {
    echo "<pre>";
      print_r($result);
    echo "</pre>";*/
-
-    
   $data = mysqli_fetch_all($result,MYSQLI_ASSOC);
       if ($result->num_rows == 1) {
       $_SESSION['id'] = $data[0]['id'];

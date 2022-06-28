@@ -1,7 +1,7 @@
 <?php
+include '../navbar.php';
 
 include 'config.php';
-include '../navbar.php';
 
 error_reporting(0);
 
