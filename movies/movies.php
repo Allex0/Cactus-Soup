@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 use LDAP\Result;
 //include '../nota_querry.php';
 include '../login_register/config.php';
@@ -109,9 +109,11 @@ if(isset($_POST['submit_nota'])){
 //$media_array = array();
 
   $media = "SELECT `id_filme`, FORMAT(AVG(`nota`), 1) as avg FROM `filme_user` WHERE id_filme='$id' GROUP BY `id_filme`";
+  
   $records_media = mysqli_query($conn, $media);
 
   while($result = mysqli_fetch_assoc($records)){
+    
     $description = $result['descricao'];
     $id = $result['id'];
     $title = $result['nome'];
@@ -163,7 +165,11 @@ if(isset($_POST['submit_nota'])){
               <div class="percentage-circle">
                 <div class="percentage-circle-stroke">
                   <div class="percent">
-                    <span style="font-size: 15px">';while($media_result = mysqli_fetch_assoc($records_media)){echo $media_result['avg']; }echo'</span>
+                    <span style="font-size: 15px">';while($media_result = mysqli_fetch_assoc($records_media)){echo $media_result['avg']; 
+                      $nota_avg = $media_result['avg'];
+                      $query = "UPDATE filmes set nota ='$nota_avg' where id='$idFilme'";
+                      $result = $conn->query($query);};
+                    echo'</span>
                   </div>
                 </div>
               </div>
