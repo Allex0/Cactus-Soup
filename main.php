@@ -119,10 +119,10 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                 <table>
                     <tr>
                         <td class="">
-                            <input class="search-form" type="text" name="k" placeholder="Search" autocomplete="off">
+                            <input class="search-form" type="text" name="k" placeholder="Procurar" autocomplete="off">
                         </td>
                         <td class="">
-                            <input class="submit-button" type="submit" name="" name="search">
+                            <input class="submit-button" type="submit" name="search" value="Submeter">
                         </td>
                     </tr>
                 </table>
