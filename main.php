@@ -81,7 +81,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                 </div>
                 <div class="box-nested-feature-1">
                     <div class="box-feature">
-                        <img src="track.png" height="100" width="100"> 
+                        <img src="images/track.png" height="100" width="100"> 
                         <div class="box-feature-text-principal">
                             <p>
                                 Descobre
@@ -95,7 +95,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                 </div>
                 <div class="box-nested-feature-2">
                     <div class="box-feature">
-                        <img src="organize.png" height="100" width="100">
+                        <img src="images/organize.png" height="100" width="100">
                         <div class="box-feature-text-principal">
                             <p>
                                 Organiza
