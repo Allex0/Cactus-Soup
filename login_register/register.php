@@ -30,17 +30,17 @@ if(isset($_POST['submit'])) {
                 $_POST['password'] = "";
                 $_POST['cpassword'] = "";
                 
-                 echo '<script type="text/javascript">alert("register completed");
+                 echo '<script type="text/javascript">alert("Registo completo!");
                     location="login.php";</script>';
             }
             else 
             {
-                echo '<script>alert("Ops, something went wrong")</script>';
+                echo '<script>alert("Ops, alguma coisa correu mal!")</script>';
             }
             }
         else
         {
-            echo "<script>alert('email Already exists')</script>";
+            echo "<script>alert('Este email ja existe!')</script>";
         }
         
     }
