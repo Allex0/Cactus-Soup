@@ -17,7 +17,7 @@
                 <li class="list-inline-item"><a href="#">Pagina principal</a></li>
                 <li class="list-inline-item"><a href="#">Perfil</a></li>
                 <li class="list-inline-item"><a href="#">Sobre nos</a></li>
-                <li class="list-inline-item"><a href="#">Privacidade</a></li>
+                <li class="list-inline-item"><a href="privacidade.php">Privacidade</a></li>
             </ul>
             <div class="copyright">
             <p class="">Cactus Soup © Alexandru Arseni 2022</p>
