@@ -127,8 +127,13 @@ h2:after {
     min-height: 100%;
 }
 
-.cards .card figcaption,
-.news .card figcaption {
+.figcaption-nota{
+   margin-right: 9vh;
+   
+}
+
+.cards .card .figcaption,
+.news .card .figcaption {
     bottom: 0;
     left: 0;
     right: 0;

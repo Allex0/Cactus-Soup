@@ -149,10 +149,14 @@ $_SESSION['LAST_ACTIVITY'] = $time;
 
 			<img src="' . $row['imgpath'] . '" />
 
-			<figcaption><form action="/cactus-soup/movies/movies.php" method="GET">
+			<figcaption class="figcaption"><form action="/cactus-soup/movies/movies.php" method="GET">
             <input class="button" type="submit" value="' . $row['nome'] . '">
+            
             <input type="hidden" name="id" value="';echo $row['id']; echo'">
             </form></figcaption>
+            <figcaption class="figcaption-nota">
+            Nota: '. $row['nota'] .'
+            </figcaption>
 
 		</figure>
                        
