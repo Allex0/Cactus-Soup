@@ -66,7 +66,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
       <div id="brand"><a href="/cactus-soup/main.php">Cactus Soup</a></div>
       <nav>
         <ul id="float-left" class="ul">
-          <li><a href="/home">Top Filmes</a></li>
+          <li><a href="<?php echo top_filmes ?>">Top Filmes</a></li>
           <li><a href="/products">Top Seris</a></li>
            
             <?php 

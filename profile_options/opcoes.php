@@ -38,13 +38,12 @@ echo'
             $update_nome = $_POST['nome'] ;
             $id_user = $_SESSION['id'];
             $query = "UPDATE users set username = '$update_nome' where id = '$id_user'";
-            echo $query;
             $result = $conn->query($query);
             if($result){
-                echo "<script language='javascript'>alert('Dados atualizados com sucesso');window.location.reload;</script>";
+                echo "<script language='javascript'>alert('Dados atualizados com sucesso');window.location.assign('../profile_page.php')</script>";
             }
             else{
-                echo "<script language='javascript'>alert('Erro');window.location.reload;</script>";
+                echo "<script language='javascript'>alert('Erro');window.location.assign('../profile_page.php')</script>";
             }
         }
 
@@ -57,11 +56,11 @@ echo'
                 $querry = "UPDATE users set password = '$password' where id ='$id_user'";
                 $result = $conn->query($querry);
                 if($result){
-                    echo "<script language='javascript'>alert('Dados atualizados com sucesso');window.location.reload;</script>";
+                    echo "<script language='javascript'>alert('Dados atualizados com sucesso');window.location.assign('../profile_page.php')</script>";
             
                 }
                 else{
-                    echo "<script language='javascript'>alert('Erro');window.location.reload;</script>";
+                    echo "<script language='javascript'>alert('Erro');window.location.assign('../profile_page.php')</script>";
                 }
             }
         }

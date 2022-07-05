@@ -14,7 +14,7 @@ else {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina de Perfil</title>
-    <link rel="stylesheet" type="text/css" href="css/cards.css">
+    <link rel="stylesheet" type="text/css" href="css/cards_profile.css">
     <!-- Custom Css -->
     <script src="index.js"></script>
     <script src="jquery/jquery.min.js"></script>
@@ -51,7 +51,7 @@ else {
                 <hr align="center">
             </div>
             <div class="url">
-                <a id="a_ver" href="#vistos" onclick="toggleActive(this); a_ver()">A ver</a>
+                <a id="a_ver" href="#a_ver" onclick="toggleActive(this); a_ver()">A ver</a>
                 <hr align="center">
             </div>
             <div class="url">
@@ -59,15 +59,15 @@ else {
                 <hr align="center">
             </div>
             <div class="url" >
-                <a id="em_pausa" href="#settings"onclick="toggleActive(this); em_pausa()">Em pausa</a>
+                <a id="em_pausa" href="#em_pausa"onclick="toggleActive(this); em_pausa()">Em pausa</a>
                 <hr align="center">
             </div>
             <div class="url">
-                <a id="cancelados" href="#settings" onclick="toggleActive(this); cancelados()">Cancelados</a>
+                <a id="cancelados" href="#cancelados" onclick="toggleActive(this); cancelados()">Cancelados</a>
                 <hr align="center">
             </div>
             <div class="url">
-                <a id="ver_no_futuro" href="#settings" onclick="toggleActive(this); ver_no_futuro()">Ver no futuro</a>
+                <a id="ver_no_futuro" href="#ver_no_futuro" onclick="toggleActive(this); ver_no_futuro()">Ver no futuro</a>
                 <hr align="center">
             </div>
             <div class="url" class="">
@@ -84,15 +84,7 @@ else {
         
     
     </div>
-    <div class="">
-    -->   
-        </div>  
-
-
     
-    </div>
-    </div>
-    <!-- End -->
 </body>
 
 </html>
