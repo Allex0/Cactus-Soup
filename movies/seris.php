@@ -21,7 +21,7 @@ if (isset($_POST['submit_status'])) {
 
   $status = $_POST['status'];
 
-  $query_nota = "SELECT `status` FROM `filme_user` WHERE id_filme='$id' AND id_user = '$id_user'";
+  $query_nota = "SELECT `status` FROM `seris_user` WHERE id_seris='$id' AND id_user = '$id_user'";
   $records_nota = mysqli_query($conn, $query_nota);
   while ($result = mysqli_fetch_assoc($records_nota)) {
     $status_vazio = $result['status'];
@@ -31,7 +31,7 @@ if (isset($_POST['submit_status'])) {
 
   if (!empty($status) and !empty($status_vazio)) {
     $id_user = $_SESSION['id'];
-    $query_status = "UPDATE filme_user set status = '$status' where id_filme = '$id' AND id_user = '$id_user'";
+    $query_status = "UPDATE seris_user set status = '$status' where id_seris = '$id' AND id_user = '$id_user'";
     $result = $conn->query($query_status);
     if ($result) {
 
@@ -42,7 +42,7 @@ if (isset($_POST['submit_status'])) {
   }
 
   if(empty($status_vazio)){
-    $query_status_vazio = "INSERT INTO filme_user (status, id_filme, id_user) VALUES ('$status', '$id', '$id_user')";
+    $query_status_vazio = "INSERT INTO seris_user (status, id_seris, id_user) VALUES ('$status', '$id', '$id_user')";
     $result = $conn -> query($query_status_vazio);
     if ($result) {
       echo "<script language='javascript'>alert('Dados adicionados com sucesso');window.location.reload;</script>";
@@ -63,47 +63,54 @@ if (isset($_POST['submit_nota'])) {
 
   $nota = $_POST['nota'];
 
-  $query_nota = "SELECT `nota` FROM `filme_user` WHERE id_filme='$id' AND id_user = '$id_user'";
+  $query_nota = "SELECT * FROM `seris_user` WHERE id_seris='$id' AND id_user = '$id_user'";
   $records_nota = mysqli_query($conn, $query_nota);
   while ($result = mysqli_fetch_assoc($records_nota)) {
-    $nota_vazio = $result['nota'];;
-  }
+    $nota_vazio = $result['nota'];
 
-  if ($nota_vazio == null) {
+  
+  if ($nota_vazio == null and $result['id_user'] and $result['id_seris'] != null) {
     $id_user = $_SESSION['id'];
-    $query = "INSERT INTO filme_user (nota, id_filme, id_user) VALUES ('$nota', '$id', '$id_user')";
+    $query = "INSERT INTO seris_user (nota) VALUES ('$nota') WHERE id_seris = '$id' AND id_user = 'id_user'";
     $result = $conn->query($query);
     if ($result) {
-      echo "<script language='javascript'>alert('Dados guardados com sucesso');window.location.reload;</script>";
+      echo "<script language='javascript'>alert('Dados inseridos com sucesso');window.location.reload;</script>";
     } else {
-      echo "<script language='javascript'>alert('Erro');window.location.reload;</script>";
+      echo "<script language='javascript'>alert('Erro na insercao da nota');window.location.reload;</script>";
     }
   }
+  if ($nota_vazio == null and $result['id_user'] and $result['id_seris'] = "") {
+    $id_user = $_SESSION['id'];
+    $query = "INSERT INTO seris_user (nota, id_user, id_seris) VALUES ('$nota', '$id_user', '$id')";
+    $result = $conn->query($query);
+    if ($result) {
+      echo "<script language='javascript'>alert('Dados inseridos com sucesso');window.location.reload;</script>";
+    } else {
+      echo "<script language='javascript'>alert('Erro na insercao da nota, seris e utilizador');window.location.reload;</script>";
+    }
+  }
+}
   if (!empty($nota)) {
     $id_user = $_SESSION['id'];
-    $query = "UPDATE filme_user set nota = '$nota' where id_filme = '$id' AND id_user = '$id_user'";
+    $query = "UPDATE seris_user set nota = '$nota' where id_seris = '$id' AND id_user = '$id_user'";
     $result = mysqli_query($conn, $query);
     if ($result) {
 
       echo "<script language='javascript'>alert('Dados atualizados com sucesso');window.location.reload;</script>";
     } else {
-      echo "<script language='javascript'>alert('Erro');window.location.reload;</script>";
+      echo "<script language='javascript'>alert('Erro na atualizacao da nota');window.location.reload;</script>";
     }
   }
 }
 
 if (isset($_POST['remover_lista'])) {
 
-  
-
-  
-
-  $querry = "DELETE FROM filme_user WHERE id_filme = '$id' AND id_user = '$id_user'";
+  $querry = "DELETE FROM seris_user WHERE id_seris = '$id' AND id_user = '$id_user'";
   $result = $conn->query($querry);
   if ($result) {
-    echo "<script language='javascript'>alert('Filme removido com sucesso');window.location.reload;</script>";
+    echo "<script language='javascript'>alert('Seris removido com sucesso');window.location.reload;</script>";
   } else {
-    echo "<script language='javascript'>alert('Erro');window.location.reload;</script>";
+    echo "<script language='javascript'>alert('Erro na removacao do seris');window.location.reload;</script>";
   }
 }
 
@@ -118,7 +125,7 @@ $records = mysqli_query($conn, $im);
 
 //$media_array = array();
 
-$media = "SELECT `id_filme`, FORMAT(AVG(`nota`), 1) as avg FROM `filme_user` WHERE id_filme='$id' GROUP BY `id_filme`";
+$media = "SELECT `id_seris`, FORMAT(AVG(`nota`), 1) as avg FROM `seris_user` WHERE id_seris='$id' GROUP BY `id_seris`";
 
 $records_media = mysqli_query($conn, $media);
 
@@ -132,6 +139,7 @@ while ($result = mysqli_fetch_assoc($records)) {
   $year_start = $result['ano_inicio'];
   $year_end = $result['ano_fim'];
   $imgpath = '../' . $result['imgpath'];
+  $seasons = $result['temporadas'];
 
   header('Content-Type: text/html; charset=utf-8');
 
@@ -180,7 +188,7 @@ while ($result = mysqli_fetch_assoc($records)) {
   while ($media_result = mysqli_fetch_assoc($records_media)) {
     echo $media_result['avg'];
     $nota_avg = $media_result['avg'];
-    $query = "UPDATE filmes set nota ='$nota_avg' where id='$idFilme'";
+    $query = "UPDATE seris set nota ='$nota_avg' where id='$idSeris'";
     $result = $conn->query($query);
   };
   echo '</span>
@@ -234,11 +242,11 @@ while ($result = mysqli_fetch_assoc($records)) {
               </li>
             </ul>
             '; 
-            $query_remover = "SELECT * FROM filme_user where id_filme = '$id' and id_user ='$id_user'";
+            $query_remover = "SELECT * FROM seris_user where id_seris = '$id' and id_user ='$id_user'";
               $result = mysqli_query($conn, $query_remover);
               while($results_remover = mysqli_fetch_assoc($result)){
-                $remover_lista_verificar = $results_remover['id_filme'];
-                if ($results_remover['id_filme'] != null){
+                $remover_lista_verificar = $results_remover['id_seris'];
+                if ($results_remover['id_seris'] != null){
                   echo '<ul> 
                   <li class="rate-it">
                     <form action="" method="post">
@@ -249,7 +257,7 @@ while ($result = mysqli_fetch_assoc($records)) {
                 </ul> ';
                 }
                 else{
-                echo $results_remover['id_filme'];
+                echo $results_remover['id_seris'];
                 };
               };
             
@@ -264,6 +272,7 @@ while ($result = mysqli_fetch_assoc($records)) {
             <div class="overview">
               <h3 >Informação</h3>
               <p >' . utf8_encode($description) . ' </p></div>
+              <p >Temporadas: ' . $seasons . ' </p>
             <div class="featured-crew">
               <h3 ></h3>
               <ul>
