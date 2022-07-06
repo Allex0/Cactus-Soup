@@ -22,6 +22,7 @@ include '../login_register/config.php';
             echo $row['id'];
             echo '" method="POST">
     <input class="button" type="submit" name="submit" value="' . $row['nome'] . '">
+    <p>&#9733;'. $row['nota'] .'
     <input type="hidden" name="id" value="';
             echo $row['id'];
             echo '">

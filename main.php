@@ -1,7 +1,5 @@
 <?php
 include("./define_variables.php");
-?>
-<?php
 include 'login_register/config.php';
 
 error_reporting(0);
@@ -151,7 +149,8 @@ $_SESSION['LAST_ACTIVITY'] = $time;
 
 			<figcaption class="figcaption"><form action="/cactus-soup/movies/movies.php" method="GET">
             <input class="button" type="submit" value="' . $row['nome'] . '">
-            Nota: '. $row['nota'] .'
+            <p>&#9733;'. $row['nota'] .'
+            </p>
             <input type="hidden" name="id" value="';echo $row['id']; echo'">
             </form></figcaption>
             
