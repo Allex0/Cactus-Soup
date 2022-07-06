@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+error_reporting(1);
 
 use LDAP\Result;
 //include '../nota_querry.php';
@@ -25,14 +25,15 @@ if (isset($_POST['submit_status'])) {
   $query_nota = "SELECT `status` FROM `filme_user` WHERE id_filme='$id' AND id_user = '$id_user'";
   $records_nota = mysqli_query($conn, $query_nota);
   while ($result = mysqli_fetch_assoc($records_nota)) {
-    $status_vazio = $result['status'];;
+    $status_vazio = $result['status'];
+    
   }
 
 
-  if (!empty($status)) {
+  if (!empty($status) and !empty($status_vazio)) {
     $id_user = $_SESSION['id'];
-    $query = "UPDATE filme_user set status = '$status' where id_filme = '$id' AND id_user = '$id_user'";
-    $result = $conn->query($query);
+    $query_status = "UPDATE filme_user set status = '$status' where id_filme = '$id' AND id_user = '$id_user'";
+    $result = $conn->query($query_status);
     if ($result) {
 
       echo "<script language='javascript'>alert('Dados atualizados com sucesso');window.location.reload;</script>";
@@ -40,9 +41,20 @@ if (isset($_POST['submit_status'])) {
       echo "<script language='javascript'>alert('Erro na update');window.location.reload;</script>";
     }
   }
+
+  if(empty($status_vazio)){
+    $query_status_vazio = "INSERT INTO filme_user (status, id_filme, id_user) VALUES ('$status', '$id', '$id_user')";
+    $result = $conn -> query($query_status_vazio);
+    if ($resul) {
+      echo "<script language='javascript'>alert('Dados adicionados com sucesso');window.location.reload;</script>";
+    }
+    else{
+      echo "<script language='javascript'>alert('Erro no insercao de status.');window.location.reload;</script>";
+    }
+  }
 }
 
-
+echo $status_vazio;
 
 $id_user = $_SESSION['id'];
 
@@ -80,6 +92,17 @@ if (isset($_POST['submit_nota'])) {
     } else {
       echo "<script language='javascript'>alert('Erro');window.location.reload;</script>";
     }
+  }
+}
+
+if (isset($_POST['remover_lista'])) {
+  $querry = "DELETE FROM filme_user WHERE id_filme = '$id' AND id_user = '$id_user'";
+  echo $querry;
+  $result = $conn->query($querry);
+  if ($result) {
+    echo "<script language='javascript'>alert('Filme removido com sucesso');window.location.reload;</script>";
+  } else {
+    echo "<script language='javascript'>alert('Erro');window.location.reload;</script>";
   }
 }
 
@@ -140,7 +163,7 @@ while ($result = mysqli_fetch_assoc($records)) {
         </div>
         <div class="info teste">
           <div class="title">
-            <a href="#">
+            <a href="">
               <h2 >' . $title . '</h2>
             </a>
             <span >(' . $year . ')</span>
@@ -171,9 +194,7 @@ while ($result = mysqli_fetch_assoc($records)) {
             <li class="rate-it">
                 <label><p >Adiciona na lista:</p></label>
                 <form action="" method="POST">
-                <input type="hidden" name="id" value="';
-    echo $id;
-    echo '">
+                <input type="hidden" name="id" value="';echo $id; echo '">
                 <select id="status" name="status">
                   <option value="a ver">A ver</option>
                   <option value="visto">Visto</option>
@@ -191,9 +212,7 @@ while ($result = mysqli_fetch_assoc($records)) {
               <li class="rate-it">
                 <label><p>Avalia:</p></label>
                 <form action="" method="POST">
-                <input type="hidden" name="id" value="';
-    echo $id;
-    echo '">
+                <input type="hidden" name="id" value="';echo $id; echo '">
                 <select id="nota" name="nota">
                   <option value="10">10</option>
                   <option value="9">9</option>
@@ -212,7 +231,14 @@ while ($result = mysqli_fetch_assoc($records)) {
 
               </li>
             </ul>
-            
+            <ul> 
+              <li class="rate-it">
+                <form action="">
+                <input type="hidden" name="id" value="';echo $id; echo '">
+                <input value="Remover da lista" name="remover_lista" type="submit">
+                </form>
+            </li>
+            </ul>
             
             ';
   };
