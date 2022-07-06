@@ -111,7 +111,7 @@ grid-row: 1;
 }
 .search-form{
   margin-left: 25px;
-  margin-top: 25px;
+  margin-top: 45px;
   border-radius: 25px;
   border: 2px solid #84CC16;
   padding: 20px; 
@@ -124,7 +124,7 @@ grid-row: 1;
 }
 
 .submit-button {
-  margin-top: 25px;
+  margin-top: 45px;
   background: #525252; 
   color: #fff; 
   border: 1px solid #84cc16; 

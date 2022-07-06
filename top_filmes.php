@@ -37,7 +37,7 @@ include 'navbar.php';
         echo $row['id'];
         echo '" method="POST">
             <input class="button" type="submit" name="submit" value="' . $row['nome'] . '">
-            <p>&#9733;'. $row['nota'] .'
+            <center><p?>&#9733;'. $row['nota'] .'</p></center>
             <input type="hidden" name="id" value="';
         echo $row['id'];
         echo '">
