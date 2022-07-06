@@ -128,7 +128,6 @@ $_SESSION['LAST_ACTIVITY'] = $time;
             </form>
          
             <?php
-            error_reporting(1);
 
             if ($_GET == null){
                 $result = mysqli_query($conn, "SELECT * FROM filmes LIMIT 10");
@@ -164,8 +163,42 @@ $_SESSION['LAST_ACTIVITY'] = $time;
 
             </div>       
                         ';
-            mysqli_close($con);
             }
+            
+            if ($_GET == null){
+                $result_seris = mysqli_query($conn, "SELECT * FROM seris LIMIT 10");
+            
+                echo'
+                <div class="wrapper">
+
+	
+
+	<div class="cards">';
+            while ($row = mysqli_fetch_array($result_seris)) {
+                echo '
+                
+
+		<figure class="card">
+
+			<img src="' . $row['imgpath'] . '" />
+
+			<figcaption class="figcaption"><form action="/cactus-soup/movies/seris.php" method="GET">
+            <input class="button" type="submit" value="' . $row['nome'] . '">
+            <center><p?>&#9733;'. $row['nota'] .'</p></center>
+            </p>
+            <input type="hidden" name="id" value="';echo $row['id']; echo'">
+            </form></figcaption>
+            
+
+		</figure>
+                       
+                ';
+            }
+            echo '
+            </div>
+
+            </div>       
+        ';}
             
             ?>
             <?php
