@@ -2,7 +2,6 @@
 error_reporting(1);
 
 use LDAP\Result;
-//include '../nota_querry.php';
 include '../login_register/config.php';
 session_start();
 
@@ -45,7 +44,7 @@ if (isset($_POST['submit_status'])) {
   if(empty($status_vazio)){
     $query_status_vazio = "INSERT INTO filme_user (status, id_filme, id_user) VALUES ('$status', '$id', '$id_user')";
     $result = $conn -> query($query_status_vazio);
-    if ($resul) {
+    if ($result) {
       echo "<script language='javascript'>alert('Dados adicionados com sucesso');window.location.reload;</script>";
     }
     else{
@@ -53,8 +52,6 @@ if (isset($_POST['submit_status'])) {
     }
   }
 }
-
-echo $status_vazio;
 
 $id_user = $_SESSION['id'];
 
@@ -85,7 +82,7 @@ if (isset($_POST['submit_nota'])) {
   if (!empty($nota)) {
     $id_user = $_SESSION['id'];
     $query = "UPDATE filme_user set nota = '$nota' where id_filme = '$id' AND id_user = '$id_user'";
-    $result = $conn->query($query);
+    $result = mysqli_query($conn, $query);
     if ($result) {
 
       echo "<script language='javascript'>alert('Dados atualizados com sucesso');window.location.reload;</script>";
@@ -96,8 +93,12 @@ if (isset($_POST['submit_nota'])) {
 }
 
 if (isset($_POST['remover_lista'])) {
+
+  
+
+  
+
   $querry = "DELETE FROM filme_user WHERE id_filme = '$id' AND id_user = '$id_user'";
-  echo $querry;
   $result = $conn->query($querry);
   if ($result) {
     echo "<script language='javascript'>alert('Filme removido com sucesso');window.location.reload;</script>";
@@ -231,16 +232,29 @@ while ($result = mysqli_fetch_assoc($records)) {
 
               </li>
             </ul>
-            <ul> 
-              <li class="rate-it">
-                <form action="">
-                <input type="hidden" name="id" value="';echo $id; echo '">
-                <input value="Remover da lista" name="remover_lista" type="submit">
-                </form>
-            </li>
-            </ul>
+            '; 
+            $query_remover = "SELECT * FROM filme_user where id_filme = '$id' and id_user ='$id_user'";
+              $result = mysqli_query($conn, $query_remover);
+              while($results_remover = mysqli_fetch_assoc($result)){
+                $remover_lista_verificar = $results_remover['id_filme'];
+                if ($results_remover['id_filme'] != null){
+                  echo '<ul> 
+                  <li class="rate-it">
+                    <form action="" method="post">
+                    <input type="hidden" name="id" value="';echo $id; echo '">
+                    <input value="Remover da lista" name="remover_lista" type="submit">
+                    </form>
+                </li>
+                </ul> ';
+                }
+                else{
+                echo $results_remover['id_filme'];
+                };
+              };
             
-            ';
+            
+            
+            
   };
   echo '
             
