@@ -239,4 +239,3 @@ while ($result = mysqli_fetch_assoc($records)) {
 </html>';
   include '../footer.php';
 }
-// }
