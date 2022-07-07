@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
     else
     {
         
-        echo "<script language='javascript'>alert('Dados guardados com sucesso');window.location.href='login.php';</script>";
+        echo "<script language='javascript'>alert('Os dados inceridos estão errados');window.location.href='login.php';</script>";
       //$_SESSION['naoerror'] = true;
     }
 
