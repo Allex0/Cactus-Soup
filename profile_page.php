@@ -2,7 +2,7 @@
 session_start();
 if (isset($_SESSION['username'])){
 
-}
+}   
 else {
     header('Location: main.php');
 }
@@ -74,6 +74,14 @@ else {
                 <a href="#opcoes" onclick="toggleActive(this); opcoes()">Opcoes</a>
                 <hr align="center">
             </div>
+            <?php
+            if ($_SESSION['role'] == 'admin'){
+            echo'
+            <div class="url" class="">
+                <a href="admin.php">Adicionar filme</a>
+                <hr align="center">
+            </div>
+            ';}?>
         </div>
     </div>
 

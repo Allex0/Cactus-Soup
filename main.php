@@ -230,7 +230,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                 // verificar se temos alguns resultados
                 if ($result_count > 0) {
                     // mostrar o nr de resultados
-                    echo '<h2><strong>Resultados encontrados: <span>' . $result_count . '</span></strong></h2>';
+                    echo '<h2><strong>Filmes encontrados: <span>' . $result_count . '</span></strong></h2>';
                     //echo '<p class="search">Your search for <i>' . $display_words . '</i> </p><hr /> <br>';
 
                     // mostrar os resultados
@@ -260,11 +260,70 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                     </div>
                     </div>';
                 } else {
-                    echo "No results found";
+                    echo "Resultados não encontrados!";
                 }
             }
 
+            if (isset($_GET['k']) && $_GET['k'] != '') {
+                $k = trim($_GET['k']); // " d " = "d"
 
+                // criar a query mysql
+                $query_string = "SELECT * FROM seris WHERE ";
+                $display_words = "";
+
+                // separar cada keyword
+                $keywords = explode(' ', $k);
+
+                foreach ($keywords as $word) {
+                    $query_string .= " keywords LIKE '%" . $word . "%' OR";
+
+                    $display_words .= $word . " ";
+                }
+
+                $query_string = substr($query_string, 0, strlen($query_string) - 3);
+
+                // conectar a base de dados
+                $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+
+                $query = mysqli_query($conn, $query_string);
+                $result_count = mysqli_num_rows($query);
+
+                // verificar se temos alguns resultados
+                if ($result_count > 0) {
+                    // mostrar o nr de resultados
+                    echo '<h2><strong>Seris encontrados: <span>' . $result_count . '</span></strong></h2>';
+                    //echo '<p class="search">Your search for <i>' . $display_words . '</i> </p><hr /> <br>';
+
+                    // mostrar os resultados
+                    echo '<div class="wrapper">
+                    <div class="cards">';
+                    while ($row = mysqli_fetch_assoc($query)) {
+                        $local_imagem = "/cactus-soup/movies/images/" . $row['nome'] . " " . $row['ano'];
+                        echo '
+                            <figure class="card">
+                           
+                                
+                                <img src="' . $row['imgpath'] . '" />
+
+                                <figcaption class="figcaption">
+                                <form action="/cactus-soup/movies/movies.php?id=';echo $row['id']; echo '" method="POST">
+                                <input class="button" type="submit" name="submit" value="' . $row['nome'] . '">
+                                <center><p?>&#9733;'. $row['nota'] .'</p></center>
+                                <input type="hidden" name="id" value="';echo $row['id']; echo'">
+                                </form>
+                                </figcaption>
+                                
+                            </figure>
+                            
+                        ';
+                    }
+                    echo '
+                    </div>
+                    </div>';
+                } else {
+                    echo "Resultados não encontrados!";
+                }
+            }
 
             ?>
 

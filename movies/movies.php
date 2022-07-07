@@ -13,42 +13,51 @@ if (isset($_GET['id'])) {
 
 $id_user = $_SESSION['id'];
 
-
 $status_vazio = null;
-
 if (isset($_POST['submit_status'])) {
 
 
   $status = $_POST['status'];
 
-  $query_nota = "SELECT `status` FROM `filme_user` WHERE id_filme='$id' AND id_user = '$id_user'";
+  $query_nota = "SELECT * FROM `filme_user` WHERE id_filme='$id' AND id_user = '$id_user'";
   $records_nota = mysqli_query($conn, $query_nota);
   while ($result = mysqli_fetch_assoc($records_nota)) {
     $status_vazio = $result['status'];
-    
+    $id_filme_status_vazio = $result['id_filme'];
   }
 
 
+  if ($status_vazio == null) {
+    $id_user = $_SESSION['id'];
+    if (empty($id_filme_status_vazio)){
+      $query = "INSERT INTO filme_user (status, id_filme, id_user) VALUES ('$status', '$id', '$id_user')";
+      $result = $conn->query($query);
+      if ($result) {
+        echo "<script language='javascript'>alert('Dados inseridos com sucesso');window.location.reload;</script>";
+      } else {
+        echo "<script language='javascript'>alert('Erro na insercao da status, id user e filme');window.location.reload;</script>";
+      }
+    }
+    elseif(!empty($id_filme_status_vazio)){
+      $query = "UPDATE filme_user set status = '$status' where id_filme = '$id' AND id_user = '$id_user'";
+      $result = $conn->query($query);
+      if ($result) {
+        echo "<script language='javascript'>alert('Dados inseridos com sucesso');window.location.reload;</script>";
+      } else {
+        echo "<script language='javascript'>alert('Erro na insercao da so status"; echo 'nota'. $nota; echo "');window.location.reload;</script>";
+      }
+    }
+    }
+    
   if (!empty($status) and !empty($status_vazio)) {
     $id_user = $_SESSION['id'];
-    $query_status = "UPDATE filme_user set status = '$status' where id_filme = '$id' AND id_user = '$id_user'";
-    $result = $conn->query($query_status);
+    $query = "UPDATE filme_user set status = '$status' where id_filme = '$id' AND id_user = '$id_user'";
+    $result = mysqli_query($conn, $query);
     if ($result) {
 
       echo "<script language='javascript'>alert('Dados atualizados com sucesso');window.location.reload;</script>";
     } else {
-      echo "<script language='javascript'>alert('Erro na update');window.location.reload;</script>";
-    }
-  }
-
-  if(empty($status_vazio)){
-    $query_status_vazio = "INSERT INTO filme_user (status, id_filme, id_user) VALUES ('$status', '$id', '$id_user')";
-    $result = $conn -> query($query_status_vazio);
-    if ($result) {
-      echo "<script language='javascript'>alert('Dados adicionados com sucesso');window.location.reload;</script>";
-    }
-    else{
-      echo "<script language='javascript'>alert('Erro no insercao de status.');window.location.reload;</script>";
+      echo "<script language='javascript'>alert('Erro');window.location.reload;</script>";
     }
   }
 }
@@ -63,23 +72,36 @@ if (isset($_POST['submit_nota'])) {
 
   $nota = $_POST['nota'];
 
-  $query_nota = "SELECT `nota` FROM `filme_user` WHERE id_filme='$id' AND id_user = '$id_user'";
+  $query_nota = "SELECT * FROM `filme_user` WHERE id_filme='$id' AND id_user = '$id_user'";
   $records_nota = mysqli_query($conn, $query_nota);
   while ($result = mysqli_fetch_assoc($records_nota)) {
-    $nota_vazio = $result['nota'];;
+    $nota_vazio = $result['nota'];
+    $id_filme_vazio = $result['id_filme'];
   }
 
   if ($nota_vazio == null) {
     $id_user = $_SESSION['id'];
-    $query = "INSERT INTO filme_user (nota, id_filme, id_user) VALUES ('$nota', '$id', '$id_user')";
-    $result = $conn->query($query);
-    if ($result) {
-      echo "<script language='javascript'>alert('Dados guardados com sucesso');window.location.reload;</script>";
-    } else {
-      echo "<script language='javascript'>alert('Erro');window.location.reload;</script>";
+    if (empty($id_filme_vazio)){
+      $query = "INSERT INTO filme_user (nota, id_filme, id_user) VALUES ('$nota', '$id', '$id_user')";
+      $result = $conn->query($query);
+      if ($result) {
+        echo "<script language='javascript'>alert('Dados inseridos com sucesso');window.location.reload;</script>";
+      } else {
+        echo "<script language='javascript'>alert('Erro na insercao da nota, id user e filme');window.location.reload;</script>";
+      }
     }
-  }
-  if (!empty($nota)) {
+    elseif(!empty($id_filme_vazio)){
+      $query = "UPDATE filme_user set nota = '$nota' where id_filme = '$id' AND id_user = '$id_user'";
+      $result = $conn->query($query);
+      if ($result) {
+        echo "<script language='javascript'>alert('Dados inseridos com sucesso');window.location.reload;</script>";
+      } else {
+        echo "<script language='javascript'>alert('Erro na insercao da so nota"; echo 'nota'. $nota; echo "');window.location.reload;</script>";
+      }
+    }
+    }
+    
+  if (!empty($nota) and !empty($nota_vazio)) {
     $id_user = $_SESSION['id'];
     $query = "UPDATE filme_user set nota = '$nota' where id_filme = '$id' AND id_user = '$id_user'";
     $result = mysqli_query($conn, $query);
@@ -93,10 +115,6 @@ if (isset($_POST['submit_nota'])) {
 }
 
 if (isset($_POST['remover_lista'])) {
-
-  
-
-  
 
   $querry = "DELETE FROM filme_user WHERE id_filme = '$id' AND id_user = '$id_user'";
   $result = $conn->query($querry);

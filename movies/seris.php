@@ -15,40 +15,50 @@ $id_user = $_SESSION['id'];
 
 
 $status_vazio = null;
-
 if (isset($_POST['submit_status'])) {
 
 
   $status = $_POST['status'];
 
-  $query_nota = "SELECT `status` FROM `seris_user` WHERE id_seris='$id' AND id_user = '$id_user'";
+  $query_nota = "SELECT * FROM `seris_user` WHERE id_seris='$id' AND id_user = '$id_user'";
   $records_nota = mysqli_query($conn, $query_nota);
   while ($result = mysqli_fetch_assoc($records_nota)) {
     $status_vazio = $result['status'];
-    
+    $id_seris_status_vazio = $result['id_seris'];
   }
 
 
+  if ($status_vazio == null) {
+    $id_user = $_SESSION['id'];
+    if (empty($id_seris_status_vazio)){
+      $query = "INSERT INTO seris_user (status, id_seris, id_user) VALUES ('$status', '$id', '$id_user')";
+      $result = $conn->query($query);
+      if ($result) {
+        echo "<script language='javascript'>alert('Dados inseridos com sucesso');window.location.reload;</script>";
+      } else {
+        echo "<script language='javascript'>alert('Erro na insercao da status, id user e seris');window.location.reload;</script>";
+      }
+    }
+    elseif(!empty($id_seris_status_vazio)){
+      $query = "UPDATE seris_user set status = '$status' where id_seris = '$id' AND id_user = '$id_user'";
+      $result = $conn->query($query);
+      if ($result) {
+        echo "<script language='javascript'>alert('Dados inseridos com sucesso');window.location.reload;</script>";
+      } else {
+        echo "<script language='javascript'>alert('Erro na insercao da so status"; echo 'nota'. $nota; echo "');window.location.reload;</script>";
+      }
+    }
+    }
+    
   if (!empty($status) and !empty($status_vazio)) {
     $id_user = $_SESSION['id'];
-    $query_status = "UPDATE seris_user set status = '$status' where id_seris = '$id' AND id_user = '$id_user'";
-    $result = $conn->query($query_status);
+    $query = "UPDATE seris_user set status = '$status' where id_seris = '$id' AND id_user = '$id_user'";
+    $result = mysqli_query($conn, $query);
     if ($result) {
 
       echo "<script language='javascript'>alert('Dados atualizados com sucesso');window.location.reload;</script>";
     } else {
-      echo "<script language='javascript'>alert('Erro na update');window.location.reload;</script>";
-    }
-  }
-
-  if(empty($status_vazio)){
-    $query_status_vazio = "INSERT INTO seris_user (status, id_seris, id_user) VALUES ('$status', '$id', '$id_user')";
-    $result = $conn -> query($query_status_vazio);
-    if ($result) {
-      echo "<script language='javascript'>alert('Dados adicionados com sucesso');window.location.reload;</script>";
-    }
-    else{
-      echo "<script language='javascript'>alert('Erro no insercao de status.');window.location.reload;</script>";
+      echo "<script language='javascript'>alert('Erro');window.location.reload;</script>";
     }
   }
 }
@@ -67,30 +77,32 @@ if (isset($_POST['submit_nota'])) {
   $records_nota = mysqli_query($conn, $query_nota);
   while ($result = mysqli_fetch_assoc($records_nota)) {
     $nota_vazio = $result['nota'];
+    $id_seris_vazio = $result['id_seris'];
+  }
 
-  
-  if ($nota_vazio == null and $result['id_user'] and $result['id_seris'] != null) {
+  if ($nota_vazio == null) {
     $id_user = $_SESSION['id'];
-    $query = "INSERT INTO seris_user (nota) VALUES ('$nota') WHERE id_seris = '$id' AND id_user = 'id_user'";
-    $result = $conn->query($query);
-    if ($result) {
-      echo "<script language='javascript'>alert('Dados inseridos com sucesso');window.location.reload;</script>";
-    } else {
-      echo "<script language='javascript'>alert('Erro na insercao da nota');window.location.reload;</script>";
+    if (empty($id_seris_vazio)){
+      $query = "INSERT INTO seris_user (nota, id_seris, id_user) VALUES ('$nota', '$id', '$id_user')";
+      $result = $conn->query($query);
+      if ($result) {
+        echo "<script language='javascript'>alert('Dados inseridos com sucesso');window.location.reload;</script>";
+      } else {
+        echo "<script language='javascript'>alert('Erro na insercao da nota, id user e seris');window.location.reload;</script>";
+      }
     }
-  }
-  if ($nota_vazio == null and $result['id_user'] and $result['id_seris'] = "") {
-    $id_user = $_SESSION['id'];
-    $query = "INSERT INTO seris_user (nota, id_user, id_seris) VALUES ('$nota', '$id_user', '$id')";
-    $result = $conn->query($query);
-    if ($result) {
-      echo "<script language='javascript'>alert('Dados inseridos com sucesso');window.location.reload;</script>";
-    } else {
-      echo "<script language='javascript'>alert('Erro na insercao da nota, seris e utilizador');window.location.reload;</script>";
+    elseif(!empty($id_seris_vazio)){
+      $query = "UPDATE seris_user set nota = '$nota' where id_seris = '$id' AND id_user = '$id_user'";
+      $result = $conn->query($query);
+      if ($result) {
+        echo "<script language='javascript'>alert('Dados inseridos com sucesso');window.location.reload;</script>";
+      } else {
+        echo "<script language='javascript'>alert('Erro na insercao da so nota"; echo 'nota'. $nota; echo "');window.location.reload;</script>";
+      }
     }
-  }
-}
-  if (!empty($nota)) {
+    }
+    
+  if (!empty($nota) and !empty($nota_vazio)) {
     $id_user = $_SESSION['id'];
     $query = "UPDATE seris_user set nota = '$nota' where id_seris = '$id' AND id_user = '$id_user'";
     $result = mysqli_query($conn, $query);
@@ -98,7 +110,7 @@ if (isset($_POST['submit_nota'])) {
 
       echo "<script language='javascript'>alert('Dados atualizados com sucesso');window.location.reload;</script>";
     } else {
-      echo "<script language='javascript'>alert('Erro na atualizacao da nota');window.location.reload;</script>";
+      echo "<script language='javascript'>alert('Erro');window.location.reload;</script>";
     }
   }
 }
@@ -113,17 +125,10 @@ if (isset($_POST['remover_lista'])) {
     echo "<script language='javascript'>alert('Erro na removacao do seris');window.location.reload;</script>";
   }
 }
-
-// if (isset($_GET['filme'])) {
-include '../login_register/config.php';
-
-// $title = $_GET['filme'];
 $idSeris = $_GET["id"];
 $im = "SELECT * FROM seris WHERE id = '$idSeris'";
 $records = mysqli_query($conn, $im);
 
-
-//$media_array = array();
 
 $media = "SELECT `id_seris`, FORMAT(AVG(`nota`), 1) as avg FROM `seris_user` WHERE id_seris='$id' GROUP BY `id_seris`";
 
@@ -134,14 +139,11 @@ while ($result = mysqli_fetch_assoc($records)) {
   $description = $result['descricao'];
   $id = $result['id'];
   $title = $result['nome'];
-  //$person = $_SESSION['id'];
-  //$movieid = $result['mid'];
   $year_start = $result['ano_inicio'];
   $year_end = $result['ano_fim'];
   $imgpath = '../' . $result['imgpath'];
   $seasons = $result['temporadas'];
 
-  header('Content-Type: text/html; charset=utf-8');
 
 
   echo '<head>
