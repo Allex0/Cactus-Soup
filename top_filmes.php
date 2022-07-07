@@ -9,6 +9,7 @@ include 'navbar.php';
     <link rel="stylesheet" href="css/cards.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/main.css">
+    <title>Top Filmes</title>
 </head>
 
 <body>
