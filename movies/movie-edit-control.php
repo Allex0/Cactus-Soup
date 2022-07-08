@@ -18,17 +18,23 @@ if (isset($_POST['upload'])) {
   
   if(!empty($imagem)){
     $sql = "UPDATE filmes SET nome = '$nome', ano = '$ano', keywords = '$keywords', descricao = '$descricao', imgpath = '$target' where id = '$idFilme'";
-    mysqli_query($conn,$sql);
+    $resultado = mysqli_query($conn,$sql);
+    if ($resultado){
+      echo "<script language='javascript'>alert('Dados atualizados com sucesso.');window.location.assign('movies.php?id=".$idFilme."');</script>";
+    }
+    else{
+        echo "<script language='javascript'>alert('Deu erro na atualização com imagem!');window.location.reload;</script>";
+    }
   }
   else{
     $sql = "UPDATE filmes SET nome = '$nome', ano = '$ano', keywords = '$keywords', descricao = '$descricao' where id = '$idFilme'";
     
     $resultado = mysqli_query($conn,$sql);
     if ($resultado){
-        echo "<script language='javascript'>alert('Dados inseridos com sucesso');window.location.reload;</script>";
+        echo "<script language='javascript'>alert('Dados atualizados com sucesso.');window.location.assign('movies.php?id=".$idFilme."');</script>";
     }
     else{
-        echo "<script language='javascript'>alert('merda');window.location.reload;</script>";
+        echo "<script language='javascript'>alert('Deu erro na atualização!');window.location.reload;</script>";
     }
   }
 

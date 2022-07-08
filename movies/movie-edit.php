@@ -56,7 +56,7 @@ else {
                     <br>
                     <input type="text" class="form-control" placeholder="Keywords (divididos por espaço)" name="keywords" value="<?php echo $keywords ?>" required>
                     <br>
-                    <input type="text" class="form-control" placeholder="Descrição" name="desc" value="<?php echo $descricao ?>" required>
+                    <input type="text" class="form-control" placeholder="Descrição" name="desc" value="<?php echo utf8_encode($descricao) ?>" required>
                     <br>
                     <div class="row">
                         <div class="col">
@@ -73,12 +73,11 @@ else {
                                 </tr>
                             </table>
                         </div>
-
+                        <button class="remover" type="submit" name="remover_filme">Remover Filme </button>
                     </div> <br><br>
-                    <div class="signupbutton">
+                    <div class="">
                         <input type="hidden" name="id" value="<?php echo  $idFilme; ?>">
-                        <input type="submit" class="btn btn-success btn-lg" name="upload" value="Submeter">
-                        
+                        <input type="submit" class="submeter" name="upload" value="Submeter">
                     </div>
 
 

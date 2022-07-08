@@ -65,7 +65,7 @@ else {
 
                     </div> <br><br>
                     <div class="signupbutton">
-                        <input type="submit" class="btn btn-success btn-lg" name="upload" value="Submeter">
+                        <input type="submit" class="submeter" name="upload" value="Submeter">
                     </div>
 
 
