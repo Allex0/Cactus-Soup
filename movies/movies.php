@@ -148,7 +148,7 @@ while ($result = mysqli_fetch_assoc($records)) {
   //$person = $_SESSION['id'];
   //$movieid = $result['mid'];
   $year = $result['ano'];
-  $imgpath = '../' . $result['imgpath'];
+  $imgpath = $result['imgpath'];
 
   header('Content-Type: text/html; charset=utf-8');
 
@@ -164,6 +164,7 @@ while ($result = mysqli_fetch_assoc($records)) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
           integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <script src="../index.js"> </script>
     <title>' . $title . '</title>
 
   ';
@@ -259,16 +260,29 @@ while ($result = mysqli_fetch_assoc($records)) {
                   echo '<ul> 
                   <li class="rate-it">
                     <form action="" method="post">
-                    <input type="hidden" name="id" value="';echo $id; echo '">
+                    
                     <input value="Remover da lista" name="remover_lista" type="submit">
+                    <input type="hidden" name="id" value="';echo $id; echo '">
                     </form>
                 </li>
                 </ul> ';
                 }
                 else{
-                echo $results_remover['id_filme'];
+                
                 };
+
               };
+              if ($_SESSION['role'] == 'admin'){
+                echo '<form target="_blank" method="POST" action="movie-edit.php">
+                  <ul>
+                    <li>
+                        <input type="hidden" name="id" value="';echo $id; echo'">
+                        <input type="image" alt="Submit" src="../images/lapis.png" name="movie-edit" width="25" height="25"/>
+                    </li> 
+                  </ul>
+                </form>';
+                ;}
+              
             
             
             

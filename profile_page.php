@@ -71,7 +71,7 @@ else {
                 <hr align="center">
             </div>
             <div class="url" class="">
-                <a href="#opcoes" onclick="toggleActive(this); opcoes()">Opcoes</a>
+                <a href="#opcoes" onclick="toggleActive(this); opcoes()">Opcões</a>
                 <hr align="center">
             </div>
             <?php

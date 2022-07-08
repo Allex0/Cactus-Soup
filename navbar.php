@@ -67,7 +67,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
       <nav>
         <ul id="float-left" class="ul">
           <li><a href="<?php echo top_filmes ?>">Top Filmes</a></li>
-          <li><a href="<?php echo top_seris ?>">Top Seris</a></li>
+          <li><a href="<?php echo top_seris ?>">Top Séries</a></li>
            
             <?php 
               $id_user = $_SESSION['id'];

@@ -9,7 +9,7 @@ include 'navbar.php';
     <link rel="stylesheet" href="css/cards.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/main.css">
-    <title>Top Seris</title>
+    <title>Top Séries</title>
 </head>
 
 <body>
@@ -19,7 +19,7 @@ include 'navbar.php';
     $result = mysqli_query($conn, "SELECT * FROM seris ORDER BY nota DESC LIMIT 50");
 
     echo '
-        <center><h1 style="margin-top: 10px; color: #27272A;">Top Seris</h1></center>
+        <center><h1 style="margin-top: 10px; color: #27272A;">Top Séries</h1></center>
 
         <div class="wrapper">
     

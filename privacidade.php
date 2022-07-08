@@ -9,7 +9,8 @@ include 'navbar.php';
 
 </head>
 
-<body style="color: black;">
+<body style="color: black; ">
+<div style="margin-left: 15px; margin-right: 15px">
     <h2>Política Privacidade</h2>
     <p>A sua privacidade é importante para nós. É política do respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site <a href=></a>, e outros sites que possuímos e operamos.</p>
     <p>Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado. </p>
@@ -17,9 +18,9 @@ include 'navbar.php';
     <p>Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.</p>
     <p>O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas <a href='https://politicaprivacidade.com' target='_BLANK'>políticas de privacidade</a>. </p>
     <p>Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados.</p>
-    <p>O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de <a href='https://avisodeprivacidad.info/' target='_BLANK' style='color:inherit !important; text-decoration: none !important;'>Aviso de Privacidad</a> e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com dados do usuário e informações pessoais, entre em contacto connosco.</p>
-    <h3>Compromisso do Usuário</h3>
-    <p>O usuário se compromete a fazer uso adequado dos conteúdos e da informação que o oferece no site e com caráter enunciativo, mas não limitativo:</p>
+    <p>O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de <a href='https://avisodeprivacidad.info/' target='_BLANK' style='color:inherit !important; text-decoration: none !important;'>Aviso de Privacidad</a> e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com dados do Utilizador e informações pessoais, entre em contacto connosco.</p>
+    <h3>Compromisso do Utilizador</h3>
+    <p>O Utilizador se compromete a fazer uso adequado dos conteúdos e da informação que o oferece no site e com caráter enunciativo, mas não limitativo:</p>
     <br>
         A) Não se envolver em atividades que sejam ilegais ou contrárias à boa fé a à ordem pública;</li>
        <br> B) Não difundir propaganda ou conteúdo de natureza racista, xenofóbica, <a style='color: inherit !important; text-decoration:none !important;' href='https://ondeapostar.pt/onde-da-a-bola/'>Onde ver a Bola</a> ou azar, qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou contra os direitos humanos;</li>
@@ -28,6 +29,6 @@ include 'navbar.php';
     <h3>Mais informações</h3>
     <p>Esperemos que esteja esclarecido e, como mencionado anteriormente, se houver algo que você não tem certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados, caso interaja com um dos recursos que você usa em nosso site.</p>
     <p>Esta política é efetiva a partir de <strong>June</strong>/<strong>2022</strong>.</p>
-
+       </div>
 </body>
 <?php include 'footer.php';?>

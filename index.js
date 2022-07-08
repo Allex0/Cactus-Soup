@@ -2,6 +2,9 @@ function toggleMobileMenu(menu) {
     menu.classList.toggle('open');
 }
 
+function movie_edit(){
+    window.open('movie-edit.php')
+}
 
 function toggleActive(menu){
 
