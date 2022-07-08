@@ -70,7 +70,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
             <div class="box">
                 <div class="box-nested-principal">    
                     <div class="box-text-principal">
-                        <p>Plataforma de filmes e series</p>
+                        <p>Plataforma de filmes e séries</p>
                     </div>
 
                     <div class="box-text-secundario">
@@ -130,7 +130,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
             <?php
 
             if ($_GET == null){
-                $result = mysqli_query($conn, "SELECT * FROM filmes LIMIT 10");
+                $result = mysqli_query($conn, "SELECT * FROM filmes ORDER BY RAND() LIMIT 10");
             
                 echo'
                 <div class="wrapper">
@@ -166,7 +166,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
             }
             
             if ($_GET == null){
-                $result_seris = mysqli_query($conn, "SELECT * FROM seris LIMIT 10");
+                $result_seris = mysqli_query($conn, "SELECT * FROM seris ORDER BY RAND() LIMIT 10");
             
                 echo'
                 <div class="wrapper">
@@ -237,7 +237,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                     echo '<div class="wrapper">
                     <div class="cards">';
                     while ($row = mysqli_fetch_assoc($query)) {
-                        $local_imagem = "/cactus-soup/movies/images/" . $row['nome'] . " " . $row['ano'];
+                        
                         echo '
                             <figure class="card">
                            
@@ -291,14 +291,13 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                 // verificar se temos alguns resultados
                 if ($result_count > 0) {
                     // mostrar o nr de resultados
-                    echo '<h2><strong>Seris encontrados: <span>' . $result_count . '</span></strong></h2>';
+                    echo '<h2><strong>Séries encontrados: <span>' . $result_count . '</span></strong></h2>';
                     //echo '<p class="search">Your search for <i>' . $display_words . '</i> </p><hr /> <br>';
 
                     // mostrar os resultados
                     echo '<div class="wrapper">
                     <div class="cards">';
                     while ($row = mysqli_fetch_assoc($query)) {
-                        $local_imagem = "/cactus-soup/movies/images/" . $row['nome'] . " " . $row['ano'];
                         echo '
                             <figure class="card">
                            
@@ -306,7 +305,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                                 <img src="' . $row['imgpath'] . '" />
 
                                 <figcaption class="figcaption">
-                                <form action="/cactus-soup/movies/movies.php?id=';echo $row['id']; echo '" method="POST">
+                                <form action="/cactus-soup/movies/seris.php?id=';echo $row['id']; echo '" method="POST">
                                 <input class="button" type="submit" name="submit" value="' . $row['nome'] . '">
                                 <center><p?>&#9733;'. $row['nota'] .'</p></center>
                                 <input type="hidden" name="id" value="';echo $row['id']; echo'">
