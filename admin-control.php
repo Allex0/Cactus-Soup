@@ -19,7 +19,7 @@ if (isset($_POST['upload'])) {
   mysqli_query($conn,$sql);
 
   if (move_uploaded_file($_FILES['image']['tmp_name'],$target)) {
-    header("Location: profile_page.php");
+    header("Location: admin.php");
   }else {
     echo "error uploading";
   }

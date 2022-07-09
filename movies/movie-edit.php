@@ -73,7 +73,9 @@ else {
                                 </tr>
                             </table>
                         </div>
-                        <button class="remover" type="submit" name="remover_filme">Remover Filme </button>
+                        <form method="POST" action="remover-filme.php">
+                            <button class="remover" type="submit" name="remover_filme">Remover Filme </button>
+                        </form>
                     </div> <br><br>
                     <div class="">
                         <input type="hidden" name="id" value="<?php echo  $idFilme; ?>">

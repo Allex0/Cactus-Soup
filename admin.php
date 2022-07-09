@@ -40,12 +40,12 @@ else {
             <div class="profile-page-form">
                 <form class="" action="admin-control.php" method="POST" enctype="multipart/form-data">
 
-                    <input type="text" class="form-control" placeholder="Nome do filme" name="mname" value=""><br>
-                    <input type="text" class="form-control" placeholder="Ano" name="release" value="">
+                    <input type="text" class="form-control" placeholder="Nome do filme" name="mname" value="" required><br>
+                    <input type="text" class="form-control" placeholder="Ano" name="release" value="" required>
                     <br>
-                    <input type="text" class="form-control" placeholder="Keywords (divididos por espaço)" name="keywords" value="">
+                    <input type="text" class="form-control" placeholder="Keywords (divididos por espaço)" name="keywords" value="" required>
                     <br>
-                    <input type="text" class="form-control" placeholder="Descrição" name="desc" value="">
+                    <input type="text" class="form-control" placeholder="Descrição" name="desc" value="" required>
                     <br>
                     <div class="row">
                         <div class="col">
@@ -56,7 +56,7 @@ else {
                                         <div class="">
                                             <input type="hidden" name="size" value="100000">
 
-                                            <input type="file" name="image" value="">
+                                            <input type="file" name="image" value="" required>
                                         </div>
                                     </td>
                                 </tr>

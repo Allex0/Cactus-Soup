@@ -17,7 +17,7 @@ include 'navbar.php';
 
     include '../login_register/config.php';
     $result = mysqli_query($conn, "SELECT * FROM filmes ORDER BY nota DESC LIMIT 50");
-
+    $i = 1;
     echo '
         <center><h1 style="margin-top: 10px; color: #27272A;"> Top Filmes</h1></center>
 
@@ -28,7 +28,7 @@ include 'navbar.php';
         <div class="cards">';
     while ($row = mysqli_fetch_array($result)) {
         echo '
-                
+                <p style="font-size: 28px; display: flex; justify-content: center; align-items: center;"> #'.$i++.'</p>
 
         <figure class="card">
 
