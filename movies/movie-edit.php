@@ -51,11 +51,15 @@ else {
               }?>
             <div class="profile-page-form">
                 <form class="" action="movie-edit-control.php" method="POST" enctype="multipart/form-data">
+                    <label>Nome:</label>
                     <input type="text" class="form-control" placeholder="Nome do filme" name="mname" value="<?php echo $nome ?>" required><br>
+                    <label>Ano:</label>
                     <input type="text" class="form-control" placeholder="Ano" name="release" value="<?php echo $ano ?>" required>
                     <br>
+                    <label>Keywords:</label>
                     <input type="text" class="form-control" placeholder="Keywords (divididos por espaço)" name="keywords" value="<?php echo $keywords ?>" required>
                     <br>
+                    <label>Descrição:</label>
                     <input type="text" class="form-control" placeholder="Descrição" name="desc" value="<?php echo utf8_encode($descricao) ?>" required>
                     <br>
                     <div class="row">
@@ -73,10 +77,11 @@ else {
                                 </tr>
                             </table>
                         </div>
-                        <form method="POST" action="remover-filme.php">
-                            <button class="remover" type="submit" name="remover_filme">Remover Filme </button>
+                        <form method="POST" formaction="remover-filme.php">
+                            <button formaction="remover-filme.php" class="remover" type="submit" name="remover_filme">Remover Filme </button>
+                            <input type="hidden" name="id" value="<?php echo  $idFilme; ?>">
                         </form>
-                    </div> <br><br>
+                    </div> <br>
                     <div class="">
                         <input type="hidden" name="id" value="<?php echo  $idFilme; ?>">
                         <input type="submit" class="submeter" name="upload" value="Submeter">
