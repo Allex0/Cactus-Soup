@@ -99,7 +99,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                                 Organiza
                             </p>
                             <div class="box-feature-text-secundario">
-                                <p><p>Cria uma lista <br>com filmes/seris <br>
+                                <p><p>Cria uma lista <br>com filmes/séries <br>
                                     e organiza como quer!</p>
                             </div>
                         </div>

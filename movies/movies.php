@@ -214,7 +214,9 @@ while ($result = mysqli_fetch_assoc($records)) {
               elseif ($nota_avg >= 1){
                 echo '<img src="../images/1-4.png" height="70px" width="70px">';
               }
-              
+              elseif($nota_avg == 0){
+                echo '<img src="../images/0.png" height="70px" width="70px">';
+              }
             echo '</div>
             ';
   if (isset($_SESSION['username'])) {

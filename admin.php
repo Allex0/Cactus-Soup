@@ -39,12 +39,15 @@ else {
             </div>
             <div class="profile-page-form">
                 <form class="" action="admin-control.php" method="POST" enctype="multipart/form-data">
-
+                    <label>Nome:</label>
                     <input type="text" class="form-control" placeholder="Nome do filme" name="mname" value="" required><br>
+                    <label>Ano:</label>
                     <input type="text" class="form-control" placeholder="Ano" name="release" value="" required>
                     <br>
+                    <label>Keywords:</label>
                     <input type="text" class="form-control" placeholder="Keywords (divididos por espaço)" name="keywords" value="" required>
                     <br>
+                    <label>Descrição:</label>
                     <input type="text" class="form-control" placeholder="Descrição" name="desc" value="" required>
                     <br>
                     <div class="row">
@@ -63,7 +66,7 @@ else {
                             </table>
                         </div>
 
-                    </div> <br><br>
+                    </div> <br>
                     <div class="signupbutton">
                         <input type="submit" class="submeter" name="upload" value="Submeter">
                     </div>

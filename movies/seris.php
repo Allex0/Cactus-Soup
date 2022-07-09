@@ -190,13 +190,32 @@ while ($result = mysqli_fetch_assoc($records)) {
   while ($media_result = mysqli_fetch_assoc($records_media)) {
     echo $media_result['avg'];
     $nota_avg = $media_result['avg'];
-    $query = "UPDATE seris set nota ='$nota_avg' where id='$idSeris'";
-    $result = $conn->query($query);
+    if (empty($nota_avg)){
+      $query = "UPDATE seris set nota = null where id='$idSeris'";
+      $result = $conn->query($query);
+    }
+    else {
+      $query = "UPDATE seris set nota ='$nota_avg' where id='$idSeris'";
+      $result = $conn->query($query);
+    }
   };
   echo '</span>
                   </div>
                 </div>
               </div>
+              '; if ($nota_avg >= 9){
+                echo '<img src="../images/9+.png" height="70px" width="70px">';
+              }
+              elseif ($nota_avg >= 5){
+                echo '<img src="../images/5-8.png" height="70px" width="70px">';
+              }
+              elseif ($nota_avg >= 1){
+                echo '<img src="../images/1-4.png" height="70px" width="70px">';
+              }
+              elseif($nota_avg == 0){
+                echo '<img src="../images/0.png" height="70px" width="70px">';
+              }
+            echo '
             </div>
             ';
   if (isset($_SESSION['username'])) {
