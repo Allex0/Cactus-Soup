@@ -47,27 +47,27 @@ else {
 
         <div class="sidenav-url">
             <div class="url">
-                <a class="active" id="todos_filmes" href="#todosfilmes" onclick="toggleActive(this); todos_filmes()">Todos filmes</a>
+                <a class="active" href="#todosfilmes" onclick="toggleActive(this); todos_filmes()">Todos filmes e séries</a>
                 <hr align="center">
             </div>
             <div class="url">
-                <a id="a_ver" href="#a_ver" onclick="toggleActive(this); a_ver()">A ver</a>
+                <a href="#a_ver" onclick="toggleActive(this); a_ver()">A ver</a>
                 <hr align="center">
             </div>
             <div class="url">
-                <a id="vistos" href="#vistos" onclick="toggleActive(this); vistos()">Vistos</a>
+                <a href="#vistos" onclick="toggleActive(this); vistos()">Vistos</a>
                 <hr align="center">
             </div>
             <div class="url" >
-                <a id="em_pausa" href="#em_pausa"onclick="toggleActive(this); em_pausa()">Em pausa</a>
+                <a href="#em_pausa"onclick="toggleActive(this); em_pausa()">Em pausa</a>
                 <hr align="center">
             </div>
             <div class="url">
-                <a id="cancelados" href="#cancelados" onclick="toggleActive(this); cancelados()">Cancelados</a>
+                <a href="#cancelados" onclick="toggleActive(this); cancelados()">Cancelados</a>
                 <hr align="center">
             </div>
             <div class="url">
-                <a id="ver_no_futuro" href="#ver_no_futuro" onclick="toggleActive(this); ver_no_futuro()">Ver no futuro</a>
+                <a href="#ver_no_futuro" onclick="toggleActive(this); ver_no_futuro()">Ver no futuro</a>
                 <hr align="center">
             </div>
             <div class="url" class="">
