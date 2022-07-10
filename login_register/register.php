@@ -80,7 +80,7 @@ if(isset($_POST['submit'])) {
             <div class="input-group">
                 <button name="submit" class="btn">Registar</button>
             </div>
-            <p class="login-register-text">Já tem conta? <a href="login.php"> Login aqui </a></p>
+            <p class="login-register-text">Já tem conta? <a href="login.php"> Login aqui</a>.</p>
         </form>
     </div>
 </body>
