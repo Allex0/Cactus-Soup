@@ -278,9 +278,18 @@ while ($result = mysqli_fetch_assoc($records)) {
                 </ul> ';
                 }
                 else{
-                echo $results_remover['id_seris'];
                 };
               };
+              if ($_SESSION['role'] == 'admin'){
+                echo '<form target="_blank" method="POST" action="seris-edit.php">
+                  <ul>
+                    <li>
+                        <input type="hidden" name="id" value="';echo $id; echo'">
+                        <input type="image" alt="Submit" src="../images/lapis.png" name="movie-edit" width="25" height="25"/>
+                    </li> 
+                  </ul>
+                </form>';
+                ;}
             
             
             

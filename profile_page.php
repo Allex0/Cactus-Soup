@@ -81,6 +81,10 @@ else {
                 <a href="admin.php">Adicionar filme</a>
                 <hr align="center">
             </div>
+            <div class="url" class="">
+                <a href="admin-seris.php">Adicionar série</a>
+                <hr align="center">
+            </div>
             ';}?>
         </div>
     </div>
