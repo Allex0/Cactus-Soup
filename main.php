@@ -260,7 +260,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                     </div>
                     </div>';
                 } else {
-                    echo "Resultados não encontrados!";
+                    echo '<h2><strong>Filmes encontrados: <span>' . $result_count . '</span></strong></h2>';
                 }
             }
 
@@ -320,7 +320,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                     </div>
                     </div>';
                 } else {
-                    echo "Resultados não encontrados!";
+                    echo '<h2><strong>Séries encontrados: <span>' . $result_count . '</span></strong></h2>';
                 }
             }
 
