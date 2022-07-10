@@ -13,7 +13,7 @@ else {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina de Perfil</title>
+    <title>Página de Perfil</title>
     <link rel="stylesheet" type="text/css" href="css/cards_profile.css">
     <!-- Custom Css -->
     <script src="index.js"></script>
