@@ -1,11 +1,11 @@
 <?php
 session_start();
-
+include 'paths.php';
 if (isset($_POST['upload'])) {
-
+  
   include 'login_register/config.php';
 
-  $target = "movies/images_seris/".basename($_FILES['image']['name']);
+  $target = target_image_seris.basename($_FILES['image']['name']);
   $nome = $_POST['mname'];
   $ano_inicio = $_POST['release-start'];
   $ano_fim = $_POST['release-end'];

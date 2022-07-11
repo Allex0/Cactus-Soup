@@ -148,7 +148,7 @@ while ($result = mysqli_fetch_assoc($records)) {
   //$person = $_SESSION['id'];
   //$movieid = $result['mid'];
   $year = $result['ano'];
-  $imgpath = $result['imgpath'];
+  $imgpath = "../".$result['imgpath'];
 
   header('Content-Type: text/html; charset=utf-8');
 
