@@ -107,7 +107,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
         <div id="bar3"></div>
         <ul id="mobile-menu">
           <li><a href="/home">Top Filmes</a></li>
-          <li><a href="/products">Top Seris</a></li>
+          <li><a href="/products">Top Séries</a></li>
 
           <?php 
               if (isset($_SESSION['username'])) 
