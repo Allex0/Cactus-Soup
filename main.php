@@ -136,7 +136,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                 <div class="wrapper">
 
 	
-
+                <h2><strong style="margin-left: 0">Filmes:</strong></h2>
 	<div class="cards">';
             while ($row = mysqli_fetch_array($result)) {
                 echo '
@@ -172,8 +172,9 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                 <div class="wrapper">
 
 	
-
+                <h2><strong style="margin-left: 0">Séries:</strong></h2>
 	<div class="cards">';
+    
             while ($row = mysqli_fetch_array($result_seris)) {
                 echo '
                 
